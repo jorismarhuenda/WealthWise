@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
+		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
+		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
+		ECFD32992AA4C923001B9E3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32982AA4C923001B9E3B /* Preview Assets.xcassets */; };
+		ECFD329B2AA4C923001B9E3B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD329A2AA4C923001B9E3B /* Persistence.swift */; };
+		ECFD329E2AA4C923001B9E3B /* WealthWise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECFD329C2AA4C923001B9E3B /* WealthWise.xcdatamodeld */; };
+		ECFD32A82AA4C923001B9E3B /* WealthWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32A72AA4C923001B9E3B /* WealthWiseTests.swift */; };
+		ECFD32B22AA4C923001B9E3B /* WealthWiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32B12AA4C923001B9E3B /* WealthWiseUITests.swift */; };
+		ECFD32B42AA4C924001B9E3B /* WealthWiseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32B32AA4C924001B9E3B /* WealthWiseUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECFD32A42AA4C923001B9E3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFD32862AA4C920001B9E3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD328D2AA4C920001B9E3B;
+			remoteInfo = WealthWise;
+		};
+		ECFD32AE2AA4C923001B9E3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFD32862AA4C920001B9E3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFD328D2AA4C920001B9E3B;
+			remoteInfo = WealthWise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
+		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECFD32952AA4C923001B9E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECFD32982AA4C923001B9E3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ECFD329A2AA4C923001B9E3B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		ECFD329D2AA4C923001B9E3B /* WealthWise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WealthWise.xcdatamodel; sourceTree = "<group>"; };
+		ECFD32A32AA4C923001B9E3B /* WealthWiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WealthWiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFD32A72AA4C923001B9E3B /* WealthWiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseTests.swift; sourceTree = "<group>"; };
+		ECFD32AD2AA4C923001B9E3B /* WealthWiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WealthWiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECFD32B12AA4C923001B9E3B /* WealthWiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseUITests.swift; sourceTree = "<group>"; };
+		ECFD32B32AA4C924001B9E3B /* WealthWiseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECFD328B2AA4C920001B9E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD32A02AA4C923001B9E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD32AA2AA4C923001B9E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECFD32852AA4C920001B9E3B = {
+			isa = PBXGroup;
+			children = (
+				ECFD32902AA4C920001B9E3B /* WealthWise */,
+				ECFD32A62AA4C923001B9E3B /* WealthWiseTests */,
+				ECFD32B02AA4C923001B9E3B /* WealthWiseUITests */,
+				ECFD328F2AA4C920001B9E3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECFD328F2AA4C920001B9E3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD328E2AA4C920001B9E3B /* WealthWise.app */,
+				ECFD32A32AA4C923001B9E3B /* WealthWiseTests.xctest */,
+				ECFD32AD2AA4C923001B9E3B /* WealthWiseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECFD32902AA4C920001B9E3B /* WealthWise */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */,
+				ECFD32932AA4C920001B9E3B /* ContentView.swift */,
+				ECFD32952AA4C923001B9E3B /* Assets.xcassets */,
+				ECFD329A2AA4C923001B9E3B /* Persistence.swift */,
+				ECFD329C2AA4C923001B9E3B /* WealthWise.xcdatamodeld */,
+				ECFD32972AA4C923001B9E3B /* Preview Content */,
+			);
+			path = WealthWise;
+			sourceTree = "<group>";
+		};
+		ECFD32972AA4C923001B9E3B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32982AA4C923001B9E3B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECFD32A62AA4C923001B9E3B /* WealthWiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32A72AA4C923001B9E3B /* WealthWiseTests.swift */,
+			);
+			path = WealthWiseTests;
+			sourceTree = "<group>";
+		};
+		ECFD32B02AA4C923001B9E3B /* WealthWiseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFD32B12AA4C923001B9E3B /* WealthWiseUITests.swift */,
+				ECFD32B32AA4C924001B9E3B /* WealthWiseUITestsLaunchTests.swift */,
+			);
+			path = WealthWiseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECFD328D2AA4C920001B9E3B /* WealthWise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFD32B72AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWise" */;
+			buildPhases = (
+				ECFD328A2AA4C920001B9E3B /* Sources */,
+				ECFD328B2AA4C920001B9E3B /* Frameworks */,
+				ECFD328C2AA4C920001B9E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WealthWise;
+			productName = WealthWise;
+			productReference = ECFD328E2AA4C920001B9E3B /* WealthWise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECFD32A22AA4C923001B9E3B /* WealthWiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFD32BA2AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWiseTests" */;
+			buildPhases = (
+				ECFD329F2AA4C923001B9E3B /* Sources */,
+				ECFD32A02AA4C923001B9E3B /* Frameworks */,
+				ECFD32A12AA4C923001B9E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFD32A52AA4C923001B9E3B /* PBXTargetDependency */,
+			);
+			name = WealthWiseTests;
+			productName = WealthWiseTests;
+			productReference = ECFD32A32AA4C923001B9E3B /* WealthWiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECFD32AC2AA4C923001B9E3B /* WealthWiseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECFD32BD2AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWiseUITests" */;
+			buildPhases = (
+				ECFD32A92AA4C923001B9E3B /* Sources */,
+				ECFD32AA2AA4C923001B9E3B /* Frameworks */,
+				ECFD32AB2AA4C923001B9E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECFD32AF2AA4C923001B9E3B /* PBXTargetDependency */,
+			);
+			name = WealthWiseUITests;
+			productName = WealthWiseUITests;
+			productReference = ECFD32AD2AA4C923001B9E3B /* WealthWiseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECFD32862AA4C920001B9E3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					ECFD328D2AA4C920001B9E3B = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					ECFD32A22AA4C923001B9E3B = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = ECFD328D2AA4C920001B9E3B;
+					};
+					ECFD32AC2AA4C923001B9E3B = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = ECFD328D2AA4C920001B9E3B;
+					};
+				};
+			};
+			buildConfigurationList = ECFD32892AA4C920001B9E3B /* Build configuration list for PBXProject "WealthWise" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECFD32852AA4C920001B9E3B;
+			productRefGroup = ECFD328F2AA4C920001B9E3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECFD328D2AA4C920001B9E3B /* WealthWise */,
+				ECFD32A22AA4C923001B9E3B /* WealthWiseTests */,
+				ECFD32AC2AA4C923001B9E3B /* WealthWiseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECFD328C2AA4C920001B9E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFD32992AA4C923001B9E3B /* Preview Assets.xcassets in Resources */,
+				ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD32A12AA4C923001B9E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD32AB2AA4C923001B9E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECFD328A2AA4C920001B9E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFD329E2AA4C923001B9E3B /* WealthWise.xcdatamodeld in Sources */,
+				ECFD329B2AA4C923001B9E3B /* Persistence.swift in Sources */,
+				ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */,
+				ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD329F2AA4C923001B9E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFD32A82AA4C923001B9E3B /* WealthWiseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECFD32A92AA4C923001B9E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECFD32B22AA4C923001B9E3B /* WealthWiseUITests.swift in Sources */,
+				ECFD32B42AA4C924001B9E3B /* WealthWiseUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECFD32A52AA4C923001B9E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD328D2AA4C920001B9E3B /* WealthWise */;
+			targetProxy = ECFD32A42AA4C923001B9E3B /* PBXContainerItemProxy */;
+		};
+		ECFD32AF2AA4C923001B9E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFD328D2AA4C920001B9E3B /* WealthWise */;
+			targetProxy = ECFD32AE2AA4C923001B9E3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ECFD32B52AA4C924001B9E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECFD32B62AA4C924001B9E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECFD32B82AA4C924001B9E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WealthWise/Preview Content\"";
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECFD32B92AA4C924001B9E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WealthWise/Preview Content\"";
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECFD32BB2AA4C924001B9E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WealthWise.app/WealthWise";
+			};
+			name = Debug;
+		};
+		ECFD32BC2AA4C924001B9E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WealthWise.app/WealthWise";
+			};
+			name = Release;
+		};
+		ECFD32BE2AA4C924001B9E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WealthWise;
+			};
+			name = Debug;
+		};
+		ECFD32BF2AA4C924001B9E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jorismarhuenda.WealthWiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WealthWise;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECFD32892AA4C920001B9E3B /* Build configuration list for PBXProject "WealthWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFD32B52AA4C924001B9E3B /* Debug */,
+				ECFD32B62AA4C924001B9E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFD32B72AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFD32B82AA4C924001B9E3B /* Debug */,
+				ECFD32B92AA4C924001B9E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFD32BA2AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFD32BB2AA4C924001B9E3B /* Debug */,
+				ECFD32BC2AA4C924001B9E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECFD32BD2AA4C924001B9E3B /* Build configuration list for PBXNativeTarget "WealthWiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECFD32BE2AA4C924001B9E3B /* Debug */,
+				ECFD32BF2AA4C924001B9E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECFD329C2AA4C923001B9E3B /* WealthWise.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECFD329D2AA4C923001B9E3B /* WealthWise.xcdatamodel */,
+			);
+			currentVersion = ECFD329D2AA4C923001B9E3B /* WealthWise.xcdatamodel */;
+			path = WealthWise.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ECFD32862AA4C920001B9E3B /* Project object */;
+}
