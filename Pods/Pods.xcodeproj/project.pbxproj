@@ -7,19 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A233E8A848D30440822FE68DBD902E5 /* Pods-WealthWise-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFFD44A26A0AB3BE9D68945A02E5ECC5 /* Pods-WealthWise-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B28C1003D5562CF5B4AA12DD1438BF4 /* Pods-WealthWise-WealthWiseUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE81E09E13776B08F0798CB9693C598 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		204CBE1FF4D9203CEE7CDD931330DB34 /* Pods-WealthWise-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 412AEF29DCB9277310687925A565A1A6 /* Pods-WealthWise-dummy.m */; };
-		2FD262BB785215621BF3D65E799BE6D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		23C321E12622EA1C8B6D22C43CB3229F /* Pods-WealthWise-WealthWiseUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D235953640DB49AEEA98E1D111819626 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27660A45FFD5D23C6E8C394E6A4C63E7 /* Pods-WealthWise-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4309EBA6F92E07C5CB50056776BA5A /* Pods-WealthWise-dummy.m */; };
+		2C15023BEA93D61E15E32A86ACE2AA37 /* CountryPickerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34F48F99396BD52EA0ED4EE180482603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		860ED647552F6C6C25688D0245796D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		AE35E87ED3673D3A0FBE1ECA5E7C87F5 /* Pods-WealthWise-WealthWiseUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D53DD661EC0967B67064B6D887730D /* Pods-WealthWise-WealthWiseUITests-dummy.m */; };
-		DDA2B24895EF248376AF8138AC1C747B /* Pods-WealthWiseTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D53E2E8AE7CEE9DA6E76335F4F82C380 /* Pods-WealthWiseTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF20A14FBE7AB43BA07A58573CB3AD0A /* Pods-WealthWiseTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D18B33719B42F6951841A781D24FBC /* Pods-WealthWiseTests-dummy.m */; };
+		3F7A96AA11CD2262577F97E8B2E0154F /* CountryViewTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */; };
+		615597EE37CE3951F74A3F89D8085DD9 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */; };
+		83C9899D012CBF9976E540BB86FCB1E4 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */; };
+		98C1FA921F8ADBEAD4704DD70D5EAEFE /* CountryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */; };
+		9C14577815A0868893010715B3A0C14B /* CountryPickerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */; };
+		9E18BB52E2AC4CC490619521A5DB99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A28378A4BF3FF3714AE0EB04B2DB16AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B41FDC7695086E596CF1EA5995D4BE91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D3FCB5E2465AE999BE4457903A9C4B1E /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */; };
+		DA6427741EF43FC7BCD9AF6FBEA837E8 /* Pods-WealthWise-WealthWiseUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E24A2952893F577E53676D6E4F11B3 /* Pods-WealthWise-WealthWiseUITests-dummy.m */; };
+		DDA2B24895EF248376AF8138AC1C747B /* Pods-WealthWiseTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 116E12C75B32B3CF0E71338F46AA7495 /* Pods-WealthWiseTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F620F18E0079399FC3D40A1FFD44DB0B /* Pods-WealthWise-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B6B169A85E2513A963FE10908214513 /* Pods-WealthWise-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAB0B048C3BD340A97F2F8CA3A9349D1 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */; };
+		FF20A14FBE7AB43BA07A58573CB3AD0A /* Pods-WealthWiseTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4990DCA63DE054F98FC0900C1ADE78FD /* Pods-WealthWiseTests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F9D5333EB7592B957CCA4D33D5E116AC /* PBXContainerItemProxy */ = {
+		1BE6750F6280E0471527C6B24D141788 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66814C3CD82F965BA3B2704535DEA19;
+			remoteInfo = CountryPickerSwift;
+		};
+		DD9615B5025B247573DA441A9B50E619 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66814C3CD82F965BA3B2704535DEA19;
+			remoteInfo = CountryPickerSwift;
+		};
+		E96BA5E97607629E440E3E71D2598025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,51 +52,67 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		030DE680D4165ECB0D6DCAD952C83399 /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise-WealthWiseUITests.release.xcconfig"; sourceTree = "<group>"; };
-		17E2D7A9CFE447A61DAE413A239C881B /* Pods-WealthWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise.release.xcconfig"; sourceTree = "<group>"; };
-		21D53DD661EC0967B67064B6D887730D /* Pods-WealthWise-WealthWiseUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWise-WealthWiseUITests-dummy.m"; sourceTree = "<group>"; };
-		2396ECC0A6DBC3C36CB3A92D7E576731 /* Pods-WealthWise-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-acknowledgements.plist"; sourceTree = "<group>"; };
-		301FD471E173CE33176A897E94CCF328 /* Pods-WealthWiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWiseTests.release.xcconfig"; sourceTree = "<group>"; };
-		412AEF29DCB9277310687925A565A1A6 /* Pods-WealthWise-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWise-dummy.m"; sourceTree = "<group>"; };
-		47AB3E1449814926C09A922E83A49545 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-WealthWiseUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4AA930C073B62A043074CCCA5C0BA8B1 /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise-WealthWiseUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		50395A941E5D40BBF5305674503AF777 /* Pods-WealthWiseTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWiseTests-Info.plist"; sourceTree = "<group>"; };
-		52BE02E3FA82ADA341942E1878447391 /* Pods-WealthWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
-		61BA9E05DC7435C74AD41978E1DF314A /* Pods-WealthWise-WealthWiseUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWise-WealthWiseUITests.modulemap"; sourceTree = "<group>"; };
+		01D5821B99ECFA4C9A4DDD61AD43B70E /* Pods-WealthWise.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWise.modulemap"; sourceTree = "<group>"; };
+		02E24A2952893F577E53676D6E4F11B3 /* Pods-WealthWise-WealthWiseUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWise-WealthWiseUITests-dummy.m"; sourceTree = "<group>"; };
+		02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryView.swift; path = CountryPicker/Classes/CountryView.swift; sourceTree = "<group>"; };
+		116E12C75B32B3CF0E71338F46AA7495 /* Pods-WealthWiseTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWiseTests-umbrella.h"; sourceTree = "<group>"; };
+		1305B8745F5BAE0294EAFC94DE793391 /* Pods-WealthWise-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWise-acknowledgements.markdown"; sourceTree = "<group>"; };
+		190975E270BAED7401EBDC05833C86A7 /* Pods-WealthWise-WealthWiseUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWise-WealthWiseUITests.modulemap"; sourceTree = "<group>"; };
+		263E4F62A39665EACAC69634C46E3CB6 /* CountryPickerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-prefix.pch"; sourceTree = "<group>"; };
+		26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.release.xcconfig; sourceTree = "<group>"; };
+		36D47A367F39CF171C00CE11A359D2DC /* Pods-WealthWise-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WealthWise-frameworks.sh"; sourceTree = "<group>"; };
+		3DB7669E851D6380FAA5224FF5A4A885 /* CountryPickerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CountryPickerSwift-Info.plist"; sourceTree = "<group>"; };
+		446BDA73608380CF0075651430AE6A5F /* CountryPickerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CountryPickerSwift.modulemap; sourceTree = "<group>"; };
+		4990DCA63DE054F98FC0900C1ADE78FD /* Pods-WealthWiseTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWiseTests-dummy.m"; sourceTree = "<group>"; };
+		500722DFCB80FF320946786F2A6E3C21 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50547BA1CE49EC74843B0A58D3EA432A /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise-WealthWiseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPicker.swift; path = CountryPicker/Classes/CountryPicker.swift; sourceTree = "<group>"; };
+		527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-umbrella.h"; sourceTree = "<group>"; };
+		560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CountryPickerSwift; path = CountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Flags.xcassets; path = CountryPicker/Classes/Flags.xcassets; sourceTree = "<group>"; };
+		5DD5995922E0538D1337AD72C14EEFAE /* Pods-WealthWise-WealthWiseUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WealthWise-WealthWiseUITests-frameworks.sh"; sourceTree = "<group>"; };
+		602F1FCC236CC0470125CCA08CF614CE /* Pods-WealthWise-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-acknowledgements.plist"; sourceTree = "<group>"; };
+		6F5D72C02D1CA71563DCA359137C85F8 /* Pods-WealthWiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWiseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F6C0D2C8080FC16F8FB96407C1BDAE9 /* Pods-WealthWiseTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWiseTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		710AD6BAF12E3B10C6B9629E42492CFE /* Pods-WealthWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7499342ADC2EDD1B9668C541A4F53630 /* Pods-WealthWise.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWise.modulemap"; sourceTree = "<group>"; };
-		7E675B2483E1EC6B56D6599C3DEA5700 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		752A81A7E2A596152136A08EBD87ECA6 /* Pods-WealthWiseTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWiseTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7B6B169A85E2513A963FE10908214513 /* Pods-WealthWise-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWise-umbrella.h"; sourceTree = "<group>"; };
+		816E506FE7C6C3EE307D9C696E5A7E81 /* Pods-WealthWiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWiseTests.release.xcconfig"; sourceTree = "<group>"; };
+		81D9D79118B5C90D08A416EDD1DFB0DB /* Pods-WealthWise-WealthWiseUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-WealthWiseUITests-Info.plist"; sourceTree = "<group>"; };
+		834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryViewTheme.swift; path = CountryPicker/Classes/CountryViewTheme.swift; sourceTree = "<group>"; };
 		8CB062F54E512808EA80B6415060DD23 /* Pods-WealthWiseTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WealthWiseTests"; path = Pods_WealthWiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4309EBA6F92E07C5CB50056776BA5A /* Pods-WealthWise-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWise-dummy.m"; sourceTree = "<group>"; };
+		9D0EF168B13C9C4D1AF9CFF8E9DE8257 /* Pods-WealthWise-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB968E5A2783502E52F1E5792A52200F /* Pods-WealthWiseTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWiseTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AE6BC2A2FE72E827D3D08D9CA97F604F /* Pods-WealthWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise.debug.xcconfig"; sourceTree = "<group>"; };
-		AECCB47BF61C7779892CA9212ADA0EAB /* Pods-WealthWise-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WealthWise-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B51B9BEB61421544C180DADAA16CA682 /* Pods-WealthWiseTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWiseTests.modulemap"; sourceTree = "<group>"; };
+		AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CountryView.xib; path = CountryPicker/Classes/CountryView.xib; sourceTree = "<group>"; };
+		ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CountryPickerSwift-dummy.m"; sourceTree = "<group>"; };
+		B33E738F215DFF16C6167DC4EE27F676 /* Pods-WealthWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise.release.xcconfig"; sourceTree = "<group>"; };
 		C884D246B422AF5DF11773554551DB81 /* Pods-WealthWise-WealthWiseUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WealthWise-WealthWiseUITests"; path = Pods_WealthWise_WealthWiseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCB36147C703C4A14A3163370C62D2FC /* Pods-WealthWise-WealthWiseUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-WealthWiseUITests-Info.plist"; sourceTree = "<group>"; };
-		D53E2E8AE7CEE9DA6E76335F4F82C380 /* Pods-WealthWiseTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWiseTests-umbrella.h"; sourceTree = "<group>"; };
-		EADB36E102ABCACCFBD8C06F985C95CA /* Pods-WealthWise-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-Info.plist"; sourceTree = "<group>"; };
-		EAE81E09E13776B08F0798CB9693C598 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWise-WealthWiseUITests-umbrella.h"; sourceTree = "<group>"; };
-		F3D18B33719B42F6951841A781D24FBC /* Pods-WealthWiseTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WealthWiseTests-dummy.m"; sourceTree = "<group>"; };
-		F428FF67E3EC25580397D49FC2A2D2C4 /* Pods-WealthWiseTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWiseTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CountryPicker.bundle; path = CountryPicker/Assets/CountryPicker.bundle; sourceTree = "<group>"; };
+		D235953640DB49AEEA98E1D111819626 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWise-WealthWiseUITests-umbrella.h"; sourceTree = "<group>"; };
+		EA96717C13959AB3FA3857C47B07782B /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WealthWise-WealthWiseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EE2379C78756524DDBB09A504BA69E10 /* Pods-WealthWiseTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WealthWiseTests.modulemap"; sourceTree = "<group>"; };
+		F5EA48CC8615BCAF94DB923982DB9AB3 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWise-WealthWiseUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F8135F2AC204DB7BF70334C233BF2F0E /* Pods-WealthWise */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WealthWise"; path = Pods_WealthWise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFFD44A26A0AB3BE9D68945A02E5ECC5 /* Pods-WealthWise-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WealthWise-umbrella.h"; sourceTree = "<group>"; };
+		FB7ED92BFE6C1C25F0C73EAD82E5F621 /* Pods-WealthWiseTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WealthWiseTests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		02D5080EC24878F42C67D334D7714CBD /* Frameworks */ = {
+		748B23BBB8B52E89DC4EAA7E533748CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				860ED647552F6C6C25688D0245796D6F /* Foundation.framework in Frameworks */,
+				A28378A4BF3FF3714AE0EB04B2DB16AA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		20A2F16C6CBEF57C46DA436A67D19118 /* Frameworks */ = {
+		98107068E2B7F2702129DB14C00E6718 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD262BB785215621BF3D65E799BE6D8 /* Foundation.framework in Frameworks */,
+				B41FDC7695086E596CF1EA5995D4BE91 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,33 +124,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E41856B2C8454CF803737CB8E8710134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E18BB52E2AC4CC490619521A5DB99D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03077945F26B5A783FB305092A9B6CD1 /* Pods-WealthWiseTests */ = {
+		181E15F5CFB87D8FE5748D65A992F826 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B51B9BEB61421544C180DADAA16CA682 /* Pods-WealthWiseTests.modulemap */,
-				AB968E5A2783502E52F1E5792A52200F /* Pods-WealthWiseTests-acknowledgements.markdown */,
-				F428FF67E3EC25580397D49FC2A2D2C4 /* Pods-WealthWiseTests-acknowledgements.plist */,
-				F3D18B33719B42F6951841A781D24FBC /* Pods-WealthWiseTests-dummy.m */,
-				50395A941E5D40BBF5305674503AF777 /* Pods-WealthWiseTests-Info.plist */,
-				D53E2E8AE7CEE9DA6E76335F4F82C380 /* Pods-WealthWiseTests-umbrella.h */,
-				52BE02E3FA82ADA341942E1878447391 /* Pods-WealthWiseTests.debug.xcconfig */,
-				301FD471E173CE33176A897E94CCF328 /* Pods-WealthWiseTests.release.xcconfig */,
-			);
-			name = "Pods-WealthWiseTests";
-			path = "Target Support Files/Pods-WealthWiseTests";
-			sourceTree = "<group>";
-		};
-		1AB6EC36FCD4EC4AE2C11A5C8D3711B3 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				63FA0D663556DBC0A8AA3963DF0CE3AB /* Pods-WealthWise */,
-				810ECF9A8F4EC3B6A6CE7014E6D6E792 /* Pods-WealthWise-WealthWiseUITests */,
-				03077945F26B5A783FB305092A9B6CD1 /* Pods-WealthWiseTests */,
+				29CE4D5C554529E1348B2E7581F3D0E2 /* Pods-WealthWise */,
+				4B174D1495171B8BC17E3273496227F9 /* Pods-WealthWise-WealthWiseUITests */,
+				84B3AC202D89937D2762679D3B0AF135 /* Pods-WealthWiseTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		29CE4D5C554529E1348B2E7581F3D0E2 /* Pods-WealthWise */ = {
+			isa = PBXGroup;
+			children = (
+				01D5821B99ECFA4C9A4DDD61AD43B70E /* Pods-WealthWise.modulemap */,
+				1305B8745F5BAE0294EAFC94DE793391 /* Pods-WealthWise-acknowledgements.markdown */,
+				602F1FCC236CC0470125CCA08CF614CE /* Pods-WealthWise-acknowledgements.plist */,
+				9B4309EBA6F92E07C5CB50056776BA5A /* Pods-WealthWise-dummy.m */,
+				36D47A367F39CF171C00CE11A359D2DC /* Pods-WealthWise-frameworks.sh */,
+				9D0EF168B13C9C4D1AF9CFF8E9DE8257 /* Pods-WealthWise-Info.plist */,
+				7B6B169A85E2513A963FE10908214513 /* Pods-WealthWise-umbrella.h */,
+				710AD6BAF12E3B10C6B9629E42492CFE /* Pods-WealthWise.debug.xcconfig */,
+				B33E738F215DFF16C6167DC4EE27F676 /* Pods-WealthWise.release.xcconfig */,
+			);
+			name = "Pods-WealthWise";
+			path = "Target Support Files/Pods-WealthWise";
+			sourceTree = "<group>";
+		};
+		4B174D1495171B8BC17E3273496227F9 /* Pods-WealthWise-WealthWiseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				190975E270BAED7401EBDC05833C86A7 /* Pods-WealthWise-WealthWiseUITests.modulemap */,
+				500722DFCB80FF320946786F2A6E3C21 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown */,
+				F5EA48CC8615BCAF94DB923982DB9AB3 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.plist */,
+				02E24A2952893F577E53676D6E4F11B3 /* Pods-WealthWise-WealthWiseUITests-dummy.m */,
+				5DD5995922E0538D1337AD72C14EEFAE /* Pods-WealthWise-WealthWiseUITests-frameworks.sh */,
+				81D9D79118B5C90D08A416EDD1DFB0DB /* Pods-WealthWise-WealthWiseUITests-Info.plist */,
+				D235953640DB49AEEA98E1D111819626 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */,
+				50547BA1CE49EC74843B0A58D3EA432A /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */,
+				EA96717C13959AB3FA3857C47B07782B /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */,
+			);
+			name = "Pods-WealthWise-WealthWiseUITests";
+			path = "Target Support Files/Pods-WealthWise-WealthWiseUITests";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -122,41 +187,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		63FA0D663556DBC0A8AA3963DF0CE3AB /* Pods-WealthWise */ = {
+		84B3AC202D89937D2762679D3B0AF135 /* Pods-WealthWiseTests */ = {
 			isa = PBXGroup;
 			children = (
-				7499342ADC2EDD1B9668C541A4F53630 /* Pods-WealthWise.modulemap */,
-				AECCB47BF61C7779892CA9212ADA0EAB /* Pods-WealthWise-acknowledgements.markdown */,
-				2396ECC0A6DBC3C36CB3A92D7E576731 /* Pods-WealthWise-acknowledgements.plist */,
-				412AEF29DCB9277310687925A565A1A6 /* Pods-WealthWise-dummy.m */,
-				EADB36E102ABCACCFBD8C06F985C95CA /* Pods-WealthWise-Info.plist */,
-				FFFD44A26A0AB3BE9D68945A02E5ECC5 /* Pods-WealthWise-umbrella.h */,
-				AE6BC2A2FE72E827D3D08D9CA97F604F /* Pods-WealthWise.debug.xcconfig */,
-				17E2D7A9CFE447A61DAE413A239C881B /* Pods-WealthWise.release.xcconfig */,
+				EE2379C78756524DDBB09A504BA69E10 /* Pods-WealthWiseTests.modulemap */,
+				6F6C0D2C8080FC16F8FB96407C1BDAE9 /* Pods-WealthWiseTests-acknowledgements.markdown */,
+				752A81A7E2A596152136A08EBD87ECA6 /* Pods-WealthWiseTests-acknowledgements.plist */,
+				4990DCA63DE054F98FC0900C1ADE78FD /* Pods-WealthWiseTests-dummy.m */,
+				FB7ED92BFE6C1C25F0C73EAD82E5F621 /* Pods-WealthWiseTests-Info.plist */,
+				116E12C75B32B3CF0E71338F46AA7495 /* Pods-WealthWiseTests-umbrella.h */,
+				6F5D72C02D1CA71563DCA359137C85F8 /* Pods-WealthWiseTests.debug.xcconfig */,
+				816E506FE7C6C3EE307D9C696E5A7E81 /* Pods-WealthWiseTests.release.xcconfig */,
 			);
-			name = "Pods-WealthWise";
-			path = "Target Support Files/Pods-WealthWise";
+			name = "Pods-WealthWiseTests";
+			path = "Target Support Files/Pods-WealthWiseTests";
 			sourceTree = "<group>";
 		};
-		810ECF9A8F4EC3B6A6CE7014E6D6E792 /* Pods-WealthWise-WealthWiseUITests */ = {
+		84C34E7D36A91E705D1EC8F303C34338 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				61BA9E05DC7435C74AD41978E1DF314A /* Pods-WealthWise-WealthWiseUITests.modulemap */,
-				7E675B2483E1EC6B56D6599C3DEA5700 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.markdown */,
-				47AB3E1449814926C09A922E83A49545 /* Pods-WealthWise-WealthWiseUITests-acknowledgements.plist */,
-				21D53DD661EC0967B67064B6D887730D /* Pods-WealthWise-WealthWiseUITests-dummy.m */,
-				CCB36147C703C4A14A3163370C62D2FC /* Pods-WealthWise-WealthWiseUITests-Info.plist */,
-				EAE81E09E13776B08F0798CB9693C598 /* Pods-WealthWise-WealthWiseUITests-umbrella.h */,
-				4AA930C073B62A043074CCCA5C0BA8B1 /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */,
-				030DE680D4165ECB0D6DCAD952C83399 /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */,
+				CC12F9C1AC03EF3EC831C51912D29617 /* CountryPicker.bundle */,
+				AC760F4E765C4506307ED2A69EEFFD84 /* CountryView.xib */,
+				5846686CBACE860B2BB21BF06E3217D8 /* Flags.xcassets */,
 			);
-			name = "Pods-WealthWise-WealthWiseUITests";
-			path = "Target Support Files/Pods-WealthWise-WealthWiseUITests";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		99D419CD910D834F4CCBBE8821768D88 /* Products */ = {
+		A2D906C6D47B86CED7F24B92EEE63E0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */,
 				F8135F2AC204DB7BF70334C233BF2F0E /* Pods-WealthWise */,
 				C884D246B422AF5DF11773554551DB81 /* Pods-WealthWise-WealthWiseUITests */,
 				8CB062F54E512808EA80B6415060DD23 /* Pods-WealthWiseTests */,
@@ -164,13 +224,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A5BD3F0963C1025A788EB11263EF1BA9 /* CountryPickerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				513A50B418B4D338C3FEE47EDE732F3C /* CountryPicker.swift */,
+				02FEC562E7256E41D1D5AE6124D60741 /* CountryView.swift */,
+				834A7EBF1F5390B63275B1BBC6A0098F /* CountryViewTheme.swift */,
+				84C34E7D36A91E705D1EC8F303C34338 /* Resources */,
+				E5EB405AA15A7A15C5FD228BD8BB86E9 /* Support Files */,
+			);
+			name = CountryPickerSwift;
+			path = CountryPickerSwift;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				99D419CD910D834F4CCBBE8821768D88 /* Products */,
-				1AB6EC36FCD4EC4AE2C11A5C8D3711B3 /* Targets Support Files */,
+				E3A89E3937644A966D3A8C3F5C8FE262 /* Pods */,
+				A2D906C6D47B86CED7F24B92EEE63E0D /* Products */,
+				181E15F5CFB87D8FE5748D65A992F826 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +254,29 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3A89E3937644A966D3A8C3F5C8FE262 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD3F0963C1025A788EB11263EF1BA9 /* CountryPickerSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5EB405AA15A7A15C5FD228BD8BB86E9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				446BDA73608380CF0075651430AE6A5F /* CountryPickerSwift.modulemap */,
+				ADA3320A90B5775E5F2DE8EB0D9FDCC9 /* CountryPickerSwift-dummy.m */,
+				3DB7669E851D6380FAA5224FF5A4A885 /* CountryPickerSwift-Info.plist */,
+				263E4F62A39665EACAC69634C46E3CB6 /* CountryPickerSwift-prefix.pch */,
+				527DF3768C441FCF57FF7CC380A536B6 /* CountryPickerSwift-umbrella.h */,
+				26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */,
+				36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CountryPickerSwift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,19 +290,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24B5CAA73923966495E571BD5D32835B /* Headers */ = {
+		17CE6543E0D27CAEA0601B929B355DCC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B28C1003D5562CF5B4AA12DD1438BF4 /* Pods-WealthWise-WealthWiseUITests-umbrella.h in Headers */,
+				F620F18E0079399FC3D40A1FFD44DB0B /* Pods-WealthWise-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC0675A84DF3388E7B948A0F1951AB78 /* Headers */ = {
+		66AE31AF557AC07266080E775F19EF37 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A233E8A848D30440822FE68DBD902E5 /* Pods-WealthWise-umbrella.h in Headers */,
+				2C15023BEA93D61E15E32A86ACE2AA37 /* CountryPickerSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D0174AC10208F2974F6C2E23056A07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C321E12622EA1C8B6D22C43CB3229F /* Pods-WealthWise-WealthWiseUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,16 +319,17 @@
 /* Begin PBXNativeTarget section */
 		0584CE1AFBED4F5961558CF0C05F2770 /* Pods-WealthWise */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 677DEBCBC6108E106B73693CD482D5E8 /* Build configuration list for PBXNativeTarget "Pods-WealthWise" */;
+			buildConfigurationList = AAD8F81474E7FB697BF9E8C44DE7693C /* Build configuration list for PBXNativeTarget "Pods-WealthWise" */;
 			buildPhases = (
-				FC0675A84DF3388E7B948A0F1951AB78 /* Headers */,
-				7D24543E52CC2EA44EEAA4D8208D922C /* Sources */,
-				20A2F16C6CBEF57C46DA436A67D19118 /* Frameworks */,
-				A0A251C2B64D242FAFFA83B726432974 /* Resources */,
+				17CE6543E0D27CAEA0601B929B355DCC /* Headers */,
+				B643349A972E7AAD3E44E22295706615 /* Sources */,
+				748B23BBB8B52E89DC4EAA7E533748CD /* Frameworks */,
+				017F23CF80F5F7D90F3B50A45CBE0D3E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				10AD5B8758D535D3616C84A6963A0FBF /* PBXTargetDependency */,
 			);
 			name = "Pods-WealthWise";
 			productName = Pods_WealthWise;
@@ -232,16 +338,17 @@
 		};
 		664F15E778D7B66D2FE0A54B969F375D /* Pods-WealthWise-WealthWiseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B7A33214215DCCAA8D01DAD71494633D /* Build configuration list for PBXNativeTarget "Pods-WealthWise-WealthWiseUITests" */;
+			buildConfigurationList = 07F666D555F118214E6CBFE7881C10DE /* Build configuration list for PBXNativeTarget "Pods-WealthWise-WealthWiseUITests" */;
 			buildPhases = (
-				24B5CAA73923966495E571BD5D32835B /* Headers */,
-				14A34AF14E21D60518DD86955E4C42B3 /* Sources */,
-				02D5080EC24878F42C67D334D7714CBD /* Frameworks */,
-				FD1DB33AB147B0F1DF64ADEECC353DE9 /* Resources */,
+				97D0174AC10208F2974F6C2E23056A07 /* Headers */,
+				98D6867A116FF7E6D21BE99F842F6C78 /* Sources */,
+				E41856B2C8454CF803737CB8E8710134 /* Frameworks */,
+				222BE8CCCFED75CF5B49087ADDF4A326 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BA091F243594386245AF34376C05441F /* PBXTargetDependency */,
 			);
 			name = "Pods-WealthWise-WealthWiseUITests";
 			productName = Pods_WealthWise_WealthWiseUITests;
@@ -260,11 +367,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				91B55A56E009A1B3C6170D38A3BA3EBE /* PBXTargetDependency */,
+				CAA228D6B6E7F99DAA2BCAD7C7FB65A0 /* PBXTargetDependency */,
 			);
 			name = "Pods-WealthWiseTests";
 			productName = Pods_WealthWiseTests;
 			productReference = 8CB062F54E512808EA80B6415060DD23 /* Pods-WealthWiseTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C903EB518308D9BA8FEDDAC7F6C5F78 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */;
+			buildPhases = (
+				66AE31AF557AC07266080E775F19EF37 /* Headers */,
+				C3D6C0CC3EE28F052BEEE8BB47EEF34E /* Sources */,
+				98107068E2B7F2702129DB14C00E6718 /* Frameworks */,
+				EEB1CF704D1B74B9A9B2F2AC303594C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CountryPickerSwift;
+			productName = CountryPicker;
+			productReference = 560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -285,10 +410,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 99D419CD910D834F4CCBBE8821768D88 /* Products */;
+			productRefGroup = A2D906C6D47B86CED7F24B92EEE63E0D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */,
 				0584CE1AFBED4F5961558CF0C05F2770 /* Pods-WealthWise */,
 				664F15E778D7B66D2FE0A54B969F375D /* Pods-WealthWise-WealthWiseUITests */,
 				BCEFD339FFA2D63EAD561A3911B8F894 /* Pods-WealthWiseTests */,
@@ -297,6 +423,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		017F23CF80F5F7D90F3B50A45CBE0D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01CD25B6720F765538AE752B164D9BAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,31 +437,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0A251C2B64D242FAFFA83B726432974 /* Resources */ = {
+		222BE8CCCFED75CF5B49087ADDF4A326 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FD1DB33AB147B0F1DF64ADEECC353DE9 /* Resources */ = {
+		EEB1CF704D1B74B9A9B2F2AC303594C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C9899D012CBF9976E540BB86FCB1E4 /* CountryPicker.bundle in Resources */,
+				98C1FA921F8ADBEAD4704DD70D5EAEFE /* CountryView.xib in Resources */,
+				615597EE37CE3951F74A3F89D8085DD9 /* Flags.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		14A34AF14E21D60518DD86955E4C42B3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE35E87ED3673D3A0FBE1ECA5E7C87F5 /* Pods-WealthWise-WealthWiseUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3473CEB873E761F53286A8B6863BF3F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,26 +465,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D24543E52CC2EA44EEAA4D8208D922C /* Sources */ = {
+		98D6867A116FF7E6D21BE99F842F6C78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204CBE1FF4D9203CEE7CDD931330DB34 /* Pods-WealthWise-dummy.m in Sources */,
+				DA6427741EF43FC7BCD9AF6FBEA837E8 /* Pods-WealthWise-WealthWiseUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B643349A972E7AAD3E44E22295706615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27660A45FFD5D23C6E8C394E6A4C63E7 /* Pods-WealthWise-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D6C0CC3EE28F052BEEE8BB47EEF34E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB0B048C3BD340A97F2F8CA3A9349D1 /* CountryPicker.swift in Sources */,
+				9C14577815A0868893010715B3A0C14B /* CountryPickerSwift-dummy.m in Sources */,
+				D3FCB5E2465AE999BE4457903A9C4B1E /* CountryView.swift in Sources */,
+				3F7A96AA11CD2262577F97E8B2E0154F /* CountryViewTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		91B55A56E009A1B3C6170D38A3BA3EBE /* PBXTargetDependency */ = {
+		10AD5B8758D535D3616C84A6963A0FBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CountryPickerSwift;
+			target = E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */;
+			targetProxy = 1BE6750F6280E0471527C6B24D141788 /* PBXContainerItemProxy */;
+		};
+		BA091F243594386245AF34376C05441F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CountryPickerSwift;
+			target = E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */;
+			targetProxy = DD9615B5025B247573DA441A9B50E619 /* PBXContainerItemProxy */;
+		};
+		CAA228D6B6E7F99DAA2BCAD7C7FB65A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-WealthWise";
 			target = 0584CE1AFBED4F5961558CF0C05F2770 /* Pods-WealthWise */;
-			targetProxy = F9D5333EB7592B957CCA4D33D5E116AC /* PBXContainerItemProxy */;
+			targetProxy = E96BA5E97607629E440E3E71D2598025 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		06699F69AFCC7E556E654D9772D10535 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50547BA1CE49EC74843B0A58D3EA432A /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -420,43 +616,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		278977357589C351A2CF6B6976830A0B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AA930C073B62A043074CCCA5C0BA8B1 /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -524,7 +683,7 @@
 		};
 		40F596B7F6D672DC4BD8B33ADF273A10 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52BE02E3FA82ADA341942E1878447391 /* Pods-WealthWiseTests.debug.xcconfig */;
+			baseConfigurationReference = 6F5D72C02D1CA71563DCA359137C85F8 /* Pods-WealthWiseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -559,9 +718,9 @@
 			};
 			name = Debug;
 		};
-		47956FADB57E664DFD277D6F5D16B0C2 /* Release */ = {
+		7C1368785EE6CEBBBBE2D44B105243D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17E2D7A9CFE447A61DAE413A239C881B /* Pods-WealthWise.release.xcconfig */;
+			baseConfigurationReference = 710AD6BAF12E3B10C6B9629E42492CFE /* Pods-WealthWise.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -591,15 +750,48 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		5888DB69AE0FDAF4C7DE46FE2F7D15F3 /* Release */ = {
+		961F2EFFEBE5F85FBC4F1622AB4CD89A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 030DE680D4165ECB0D6DCAD952C83399 /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */;
+			baseConfigurationReference = 26FC107503B28EB6AE3CA3FACBFDD580 /* CountryPickerSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA8D3BD149B79A475C418D1760ABD8E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA96717C13959AB3FA3857C47B07782B /* Pods-WealthWise-WealthWiseUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -635,9 +827,9 @@
 			};
 			name = Release;
 		};
-		64E0E0710EED34ECF6166F108F5D4253 /* Debug */ = {
+		BE2B9A1858DF40D9870A6425BC3F5E77 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE6BC2A2FE72E827D3D08D9CA97F604F /* Pods-WealthWise.debug.xcconfig */;
+			baseConfigurationReference = B33E738F215DFF16C6167DC4EE27F676 /* Pods-WealthWise.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -667,14 +859,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		D4632A422ACBCC55F4AB453FB94584F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 301FD471E173CE33176A897E94CCF328 /* Pods-WealthWiseTests.release.xcconfig */;
+			baseConfigurationReference = 816E506FE7C6C3EE307D9C696E5A7E81 /* Pods-WealthWiseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -710,9 +903,53 @@
 			};
 			name = Release;
 		};
+		E1E67FC9F7E1027379302D1E95996201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36CD62E48D9023BE3749E588A1AF8A05 /* CountryPickerSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		07F666D555F118214E6CBFE7881C10DE /* Build configuration list for PBXNativeTarget "Pods-WealthWise-WealthWiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06699F69AFCC7E556E654D9772D10535 /* Debug */,
+				BA8D3BD149B79A475C418D1760ABD8E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -722,20 +959,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		677DEBCBC6108E106B73693CD482D5E8 /* Build configuration list for PBXNativeTarget "Pods-WealthWise" */ = {
+		9C903EB518308D9BA8FEDDAC7F6C5F78 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64E0E0710EED34ECF6166F108F5D4253 /* Debug */,
-				47956FADB57E664DFD277D6F5D16B0C2 /* Release */,
+				961F2EFFEBE5F85FBC4F1622AB4CD89A /* Debug */,
+				E1E67FC9F7E1027379302D1E95996201 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B7A33214215DCCAA8D01DAD71494633D /* Build configuration list for PBXNativeTarget "Pods-WealthWise-WealthWiseUITests" */ = {
+		AAD8F81474E7FB697BF9E8C44DE7693C /* Build configuration list for PBXNativeTarget "Pods-WealthWise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				278977357589C351A2CF6B6976830A0B /* Debug */,
-				5888DB69AE0FDAF4C7DE46FE2F7D15F3 /* Release */,
+				7C1368785EE6CEBBBBE2D44B105243D8 /* Debug */,
+				BE2B9A1858DF40D9870A6425BC3F5E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

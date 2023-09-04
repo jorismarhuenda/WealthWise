@@ -25,6 +25,7 @@
 		EC0298542AA64C6200EE2945 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298532AA64C6200EE2945 /* Investment.swift */; };
 		EC0298562AA653B400EE2945 /* AlertsAndNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298552AA653B400EE2945 /* AlertsAndNotificationsView.swift */; };
 		EC0298582AA670E600EE2945 /* ProfileConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298572AA670E600EE2945 /* ProfileConfigurationView.swift */; };
+		EC6108142AA67822005E48B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108132AA67822005E48B8 /* LoginView.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		EC0298532AA64C6200EE2945 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 		EC0298552AA653B400EE2945 /* AlertsAndNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndNotificationsView.swift; sourceTree = "<group>"; };
 		EC0298572AA670E600EE2945 /* ProfileConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurationView.swift; sourceTree = "<group>"; };
+		EC6108132AA67822005E48B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,7 +174,6 @@
 				0FFAF13EB4AFA752B6C35608 /* Pods-WealthWiseTests.debug.xcconfig */,
 				926876715AA5556ABC486B86 /* Pods-WealthWiseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -204,6 +205,7 @@
 				EC0298512AA64C0E00EE2945 /* InvestmentManagementView.swift */,
 				EC0298552AA653B400EE2945 /* AlertsAndNotificationsView.swift */,
 				EC0298572AA670E600EE2945 /* ProfileConfigurationView.swift */,
+				EC6108132AA67822005E48B8 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +288,7 @@
 				ECFD328A2AA4C920001B9E3B /* Sources */,
 				ECFD328B2AA4C920001B9E3B /* Frameworks */,
 				ECFD328C2AA4C920001B9E3B /* Resources */,
+				A3C06CF68D6CE77204A74993 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +326,7 @@
 				ECFD32A92AA4C923001B9E3B /* Sources */,
 				ECFD32AA2AA4C923001B9E3B /* Frameworks */,
 				ECFD32AB2AA4C923001B9E3B /* Resources */,
+				35E211A1064CF51396F4D20C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -426,6 +430,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		35E211A1064CF51396F4D20C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		51E33175E4CA5A15A25F1B19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,6 +491,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3C06CF68D6CE77204A74993 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WealthWise/Pods-WealthWise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WealthWise/Pods-WealthWise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WealthWise/Pods-WealthWise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,6 +545,7 @@
 				ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */,
 				EC0298412AA4F7D900EE2945 /* NetWorthChartView.swift in Sources */,
 				ECFD32D72AA4DE52001B9E3B /* InvestmentPortfolioView.swift in Sources */,
+				EC6108142AA67822005E48B8 /* LoginView.swift in Sources */,
 				ECFD32C92AA4D820001B9E3B /* InvestmentAssistanceView.swift in Sources */,
 				EC0298582AA670E600EE2945 /* ProfileConfigurationView.swift in Sources */,
 				EC0298522AA64C0E00EE2945 /* InvestmentManagementView.swift in Sources */,

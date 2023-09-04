@@ -7,7 +7,7 @@ target 'WealthWise' do
 
   # Pods for WealthWise
 
-
+pod 'CountryPickerSwift'
 
   target 'WealthWiseTests' do
     inherit! :search_paths

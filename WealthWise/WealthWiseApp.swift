@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct WealthWiseApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @State private var isLoggedIn = false // Vous pouvez utiliser cette variable pour gérer l'état de connexion
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if isLoggedIn {
+                ContentView()
+            } else {
+                LoginView(isLoggedIn: $isLoggedIn)
+            }
         }
     }
 }
+
