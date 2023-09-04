@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @State private var showingAlertsAndNotifications = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -49,6 +51,31 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                
+                NavigationLink(destination: AlertsAndNotificationsView(), isActive: $showingAlertsAndNotifications) {
+                                    EmptyView()
+                                }
+                                .frame(width: 0, height: 0)
+                                .opacity(0)
+
+                                Button(action: {
+                                    showingAlertsAndNotifications = true
+                                }) {
+                                    Text("Alertes et Notifications")
+                                        .frame(width: 200, height: 50)
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                }
+                
+                NavigationLink(destination: ProfileConfigurationView()) {
+                    Text("Configuration du Profil")
+                        .frame(width: 200, height: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
                 Spacer()
             }
             .padding()

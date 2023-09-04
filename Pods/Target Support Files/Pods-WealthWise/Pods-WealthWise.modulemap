@@ -1,0 +1,6 @@
+framework module Pods_WealthWise {
+  umbrella header "Pods-WealthWise-umbrella.h"
+
+  export *
+  module * { export * }
+}
