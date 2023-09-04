@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */; };
+		EC0298392AA4F76000EE2945 /* IncomeExpenseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */; };
+		EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02983A2AA4F78300EE2945 /* Transaction.swift */; };
+		EC02983D2AA4F7A500EE2945 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */; };
+		EC02983F2AA4F7C100EE2945 /* NetWorthDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02983E2AA4F7C100EE2945 /* NetWorthDataPoint.swift */; };
+		EC0298412AA4F7D900EE2945 /* NetWorthChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298402AA4F7D900EE2945 /* NetWorthChartView.swift */; };
+		EC0298432AA4F80800EE2945 /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298422AA4F80800EE2945 /* ExpenseCategory.swift */; };
+		EC0298452AA4F82800EE2945 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298442AA4F82800EE2945 /* PieChartView.swift */; };
+		EC0298472AA4F85500EE2945 /* Factice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298462AA4F85500EE2945 /* Factice.swift */; };
+		EC0298492AA638FC00EE2945 /* DebtManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298482AA638FC00EE2945 /* DebtManagementView.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -30,6 +40,8 @@
 		ECFD32D72AA4DE52001B9E3B /* InvestmentPortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32D62AA4DE52001B9E3B /* InvestmentPortfolioView.swift */; };
 		ECFD32D92AA4DE63001B9E3B /* RetirementPlanningCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32D82AA4DE63001B9E3B /* RetirementPlanningCalculator.swift */; };
 		ECFD32DB2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32DA2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift */; };
+		ECFD32DD2AA4F2E9001B9E3B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32DC2AA4F2E9001B9E3B /* TransactionDetailView.swift */; };
+		ECFD32DF2AA4F32B001B9E3B /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32DE2AA4F32B001B9E3B /* TransactionDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +62,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialReportView.swift; sourceTree = "<group>"; };
+		EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseSummaryView.swift; sourceTree = "<group>"; };
+		EC02983A2AA4F78300EE2945 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		EC02983E2AA4F7C100EE2945 /* NetWorthDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorthDataPoint.swift; sourceTree = "<group>"; };
+		EC0298402AA4F7D900EE2945 /* NetWorthChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorthChartView.swift; sourceTree = "<group>"; };
+		EC0298422AA4F80800EE2945 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
+		EC0298442AA4F82800EE2945 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		EC0298462AA4F85500EE2945 /* Factice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factice.swift; sourceTree = "<group>"; };
+		EC0298482AA638FC00EE2945 /* DebtManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtManagementView.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +98,8 @@
 		ECFD32D62AA4DE52001B9E3B /* InvestmentPortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentPortfolioView.swift; sourceTree = "<group>"; };
 		ECFD32D82AA4DE63001B9E3B /* RetirementPlanningCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetirementPlanningCalculator.swift; sourceTree = "<group>"; };
 		ECFD32DA2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketNewsAndUpdatesView.swift; sourceTree = "<group>"; };
+		ECFD32DC2AA4F2E9001B9E3B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		ECFD32DE2AA4F32B001B9E3B /* TransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +150,11 @@
 		ECFD32902AA4C920001B9E3B /* WealthWise */ = {
 			isa = PBXGroup;
 			children = (
+				EC0298462AA4F85500EE2945 /* Factice.swift */,
+				ECFD32DE2AA4F32B001B9E3B /* TransactionDetail.swift */,
+				EC02983A2AA4F78300EE2945 /* Transaction.swift */,
+				EC02983E2AA4F7C100EE2945 /* NetWorthDataPoint.swift */,
+				EC0298422AA4F80800EE2945 /* ExpenseCategory.swift */,
 				ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */,
 				ECFD32932AA4C920001B9E3B /* ContentView.swift */,
 				ECFD32C02AA4D6DF001B9E3B /* DashboardView.swift */,
@@ -142,6 +171,13 @@
 				ECFD32D62AA4DE52001B9E3B /* InvestmentPortfolioView.swift */,
 				ECFD32D82AA4DE63001B9E3B /* RetirementPlanningCalculator.swift */,
 				ECFD32DA2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift */,
+				ECFD32DC2AA4F2E9001B9E3B /* TransactionDetailView.swift */,
+				EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */,
+				EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */,
+				EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */,
+				EC0298402AA4F7D900EE2945 /* NetWorthChartView.swift */,
+				EC0298442AA4F82800EE2945 /* PieChartView.swift */,
+				EC0298482AA638FC00EE2945 /* DebtManagementView.swift */,
 				ECFD32952AA4C923001B9E3B /* Assets.xcassets */,
 				ECFD329A2AA4C923001B9E3B /* Persistence.swift */,
 				ECFD329C2AA4C923001B9E3B /* WealthWise.xcdatamodeld */,
@@ -305,9 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0298452AA4F82800EE2945 /* PieChartView.swift in Sources */,
+				EC0298472AA4F85500EE2945 /* Factice.swift in Sources */,
 				ECFD32CB2AA4D830001B9E3B /* RetirementTrackerView.swift in Sources */,
 				ECFD329E2AA4C923001B9E3B /* WealthWise.xcdatamodeld in Sources */,
+				EC0298492AA638FC00EE2945 /* DebtManagementView.swift in Sources */,
+				EC0298432AA4F80800EE2945 /* ExpenseCategory.swift in Sources */,
 				ECFD32DB2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift in Sources */,
+				EC0298392AA4F76000EE2945 /* IncomeExpenseSummaryView.swift in Sources */,
 				ECFD32CF2AA4D84F001B9E3B /* SiriIntegrationView.swift in Sources */,
 				ECFD32D12AA4D85D001B9E3B /* PersonalizedTipsView.swift in Sources */,
 				ECFD329B2AA4C923001B9E3B /* Persistence.swift in Sources */,
@@ -316,13 +357,20 @@
 				ECFD32CD2AA4D83F001B9E3B /* SecurityPrivacyView.swift in Sources */,
 				ECFD32C52AA4D801001B9E3B /* BudgetPlanningView.swift in Sources */,
 				ECFD32D92AA4DE63001B9E3B /* RetirementPlanningCalculator.swift in Sources */,
+				EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */,
 				ECFD32C32AA4D6F8001B9E3B /* ExpenseTrackerView.swift in Sources */,
+				EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */,
 				ECFD32C12AA4D6DF001B9E3B /* DashboardView.swift in Sources */,
+				ECFD32DD2AA4F2E9001B9E3B /* TransactionDetailView.swift in Sources */,
+				EC02983D2AA4F7A500EE2945 /* TransactionListView.swift in Sources */,
 				ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */,
+				EC02983F2AA4F7C100EE2945 /* NetWorthDataPoint.swift in Sources */,
 				ECFD32D32AA4D86C001B9E3B /* FinancialEducationView.swift in Sources */,
 				ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */,
+				EC0298412AA4F7D900EE2945 /* NetWorthChartView.swift in Sources */,
 				ECFD32D72AA4DE52001B9E3B /* InvestmentPortfolioView.swift in Sources */,
 				ECFD32C92AA4D820001B9E3B /* InvestmentAssistanceView.swift in Sources */,
+				ECFD32DF2AA4F32B001B9E3B /* TransactionDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,24 @@ import SwiftUI
 
 struct TransactionsView: View {
     var body: some View {
-        VStack {
+        VStack (spacing: 20) {
             Text("Transactions")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
             
-            // Ajoutez ici des éléments pour afficher et gérer les transactions
+            NavigationLink(destination: TransactionDetailView(transaction: TransactionDetail(id: UUID(),
+                                                                                             beneficiary: "",
+                                                                                             date: Date(),
+                                                                                             amount: 150.0,
+                                                                                             category: "",
+                                                                                             notes: ""))) {
+                Text("Détails de la Transaction")
+                    .frame(width: 200, height: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }
         .navigationBarTitle("Transactions")
     }

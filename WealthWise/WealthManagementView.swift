@@ -21,8 +21,13 @@ struct WealthManagementView: View {
                         .cornerRadius(10)
                 }
                 
-                // Ajoutez d'autres liens pour les fonctionnalités de gestion de patrimoine
-                
+                NavigationLink(destination: DebtManagementView()) {
+                                    Text("Gestion de Dettes")
+                                        .frame(width: 200, height: 50)
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                }
                 Spacer()
             }
             .padding()
