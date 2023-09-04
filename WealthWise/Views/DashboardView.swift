@@ -11,8 +11,9 @@ struct DashboardView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        List {
-            Section(header: Text("Options")) {
+        ScrollView {
+            LazyVStack(spacing: 20) {
+            
                 
                 NavigationLink(destination: BudgetPlanningView()) {
                     Text("Planification Budgétaire")
@@ -49,19 +50,45 @@ struct DashboardView: View {
             
             NavigationLink(destination: DebtManagementView()) {
                                 Text("Gestion de Dettes")
+                
                             }
-            
-            NavigationLink(destination: FinancialReportView()) {
-                                Text("Voir le Rapport Financier")
-                                    .foregroundColor(.blue)
-                            }
-            
-                Spacer()
+                
+                NavigationLink(destination: SavingsPlanningView()) {
+                                    Text("Planification de l'Épargne")
+                }
+                
+                NavigationLink(destination: InvestmentManagementView()) {
+                    Text("Gestion des Investissements")
+                }
             }
         .listStyle(GroupedListStyle())
             .navigationBarTitle("Tableau de Bord")
     }
 }
+}
+
+    
+struct DashboardListItem: View {
+    let title: String
+    let image: String
+
+    var body: some View {
+        HStack {
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.blue)
+            
+            Text(title)
+                .font(.headline)
+            
+            Spacer()
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+    }
 }
 
 struct DashboardView_Previews: PreviewProvider {

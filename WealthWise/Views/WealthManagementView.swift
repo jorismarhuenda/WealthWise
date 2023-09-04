@@ -28,6 +28,24 @@ struct WealthManagementView: View {
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                 }
+                
+                NavigationLink(destination: SavingsPlanningView()) {
+                                   Text("Planification de l'Épargne")
+                                       .frame(width: 200, height: 50)
+                                       .background(Color.blue)
+                                       .foregroundColor(.white)
+                                       .cornerRadius(10)
+                               }
+                
+                NavigationLink(destination: InvestmentManagementView()) {
+                    Text("Gestion des Investissements")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
                 Spacer()
             }
             .padding()
