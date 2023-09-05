@@ -13,6 +13,14 @@ struct WealthManagementView: View {
                 Text("Gestion de Patrimoine")
                     .font(.title)
                 
+                NavigationLink(destination: WealthSummaryView()) { // Ajout du lien vers le récapitulatif de patrimoine
+                                   Text("Récapitulatif de Patrimoine")
+                                       .frame(width: 200, height: 50)
+                                       .background(Color.blue)
+                                       .foregroundColor(.white)
+                                       .cornerRadius(10)
+                               }
+                
                 NavigationLink(destination: InvestmentPortfolioView()) {
                     Text("Portfolio d'Investissement")
                         .frame(width: 200, height: 50)
