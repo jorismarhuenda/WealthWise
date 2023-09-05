@@ -11,6 +11,7 @@ struct BudgetPlanningView: View {
     @State private var income: Double = 0
     @State private var expenses: Double = 0
     @State private var budget: Double = 0
+    @State private var bills: [Bill] = [] // Modèle de données pour les factures
 
     var body: some View {
         VStack (spacing: 20) {
@@ -53,6 +54,13 @@ struct BudgetPlanningView: View {
                                     .foregroundColor(.blue)
                             }
             
+            NavigationLink(destination: BillManagementView(bills: $bills)) {
+                              Text("Gestion des Factures")
+                                  .frame(width: 200, height: 50)
+                                  .background(Color.blue)
+                                  .foregroundColor(.white)
+                                  .cornerRadius(10)
+                          }
             Spacer()
         }
         .padding()

@@ -28,6 +28,9 @@
 		EC6108142AA67822005E48B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108132AA67822005E48B8 /* LoginView.swift */; };
 		EC6108162AA78B4B005E48B8 /* WealthSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108152AA78B4B005E48B8 /* WealthSummaryView.swift */; };
 		EC6108182AA78C29005E48B8 /* RetirementPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108172AA78C29005E48B8 /* RetirementPlanningView.swift */; };
+		EC61081A2AA78EF6005E48B8 /* RiskAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108192AA78EF6005E48B8 /* RiskAnalysisView.swift */; };
+		EC61081C2AA79448005E48B8 /* TaxTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC61081B2AA79448005E48B8 /* TaxTrackingView.swift */; };
+		EC61081E2AA79583005E48B8 /* BillManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC61081D2AA79583005E48B8 /* BillManagementView.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -100,6 +103,9 @@
 		EC6108132AA67822005E48B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EC6108152AA78B4B005E48B8 /* WealthSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthSummaryView.swift; sourceTree = "<group>"; };
 		EC6108172AA78C29005E48B8 /* RetirementPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetirementPlanningView.swift; sourceTree = "<group>"; };
+		EC6108192AA78EF6005E48B8 /* RiskAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskAnalysisView.swift; sourceTree = "<group>"; };
+		EC61081B2AA79448005E48B8 /* TaxTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxTrackingView.swift; sourceTree = "<group>"; };
+		EC61081D2AA79583005E48B8 /* BillManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillManagementView.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 				EC6108132AA67822005E48B8 /* LoginView.swift */,
 				EC6108152AA78B4B005E48B8 /* WealthSummaryView.swift */,
 				EC6108172AA78C29005E48B8 /* RetirementPlanningView.swift */,
+				EC6108192AA78EF6005E48B8 /* RiskAnalysisView.swift */,
+				EC61081B2AA79448005E48B8 /* TaxTrackingView.swift */,
+				EC61081D2AA79583005E48B8 /* BillManagementView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +532,8 @@
 			files = (
 				EC6108162AA78B4B005E48B8 /* WealthSummaryView.swift in Sources */,
 				EC0298452AA4F82800EE2945 /* PieChartView.swift in Sources */,
+				EC61081E2AA79583005E48B8 /* BillManagementView.swift in Sources */,
+				EC61081A2AA78EF6005E48B8 /* RiskAnalysisView.swift in Sources */,
 				EC0298472AA4F85500EE2945 /* Factice.swift in Sources */,
 				ECFD32CB2AA4D830001B9E3B /* RetirementTrackerView.swift in Sources */,
 				ECFD329E2AA4C923001B9E3B /* WealthWise.xcdatamodeld in Sources */,
@@ -539,6 +550,7 @@
 				ECFD32CD2AA4D83F001B9E3B /* SecurityPrivacyView.swift in Sources */,
 				ECFD32C52AA4D801001B9E3B /* BudgetPlanningView.swift in Sources */,
 				ECFD32D92AA4DE63001B9E3B /* RetirementPlanningCalculator.swift in Sources */,
+				EC61081C2AA79448005E48B8 /* TaxTrackingView.swift in Sources */,
 				EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */,
 				ECFD32C32AA4D6F8001B9E3B /* ExpenseTrackerView.swift in Sources */,
 				EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */,

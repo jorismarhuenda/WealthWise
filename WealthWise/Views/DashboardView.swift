@@ -38,28 +38,6 @@ struct DashboardView: View {
                 NavigationLink(destination: RetirementTrackerView()) {
                     Text("Suivi de la Retraite")
                 }
-            
-            NavigationLink(destination: TransactionDetailView(transaction: TransactionDetail(id: UUID(),
-                                                                                             beneficiary: "",
-                                                                                             date: Date(),
-                                                                                             amount: 150.0,
-                                                                                             category: "",
-                                                                                             notes: ""))) {
-                Text("Détails de la Transaction")
-            }
-            
-            NavigationLink(destination: DebtManagementView()) {
-                                Text("Gestion de Dettes")
-                
-                            }
-                
-                NavigationLink(destination: SavingsPlanningView()) {
-                                    Text("Planification de l'Épargne")
-                }
-                
-                NavigationLink(destination: InvestmentManagementView()) {
-                    Text("Gestion des Investissements")
-                }
             }
         .listStyle(GroupedListStyle())
             .navigationBarTitle("Tableau de Bord")

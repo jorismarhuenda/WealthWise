@@ -13,8 +13,13 @@ struct InvestmentAssistanceView: View {
                 Text("Aide à l'Investissement")
                     .font(.title)
                 
-                // Ajoutez des éléments pour fournir de l'aide à l'investissement
-                
+                NavigationLink(destination: RiskAnalysisView()) {
+                                    Text("Analyse de Risque")
+                                        .frame(width: 200, height: 50)
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                }
                 Spacer()
             }
             .padding()
