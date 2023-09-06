@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Firebase
 
 struct ContentView: View {
     @State private var showingAlertsAndNotifications = false

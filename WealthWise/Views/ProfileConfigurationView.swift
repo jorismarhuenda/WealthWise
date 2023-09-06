@@ -6,21 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ProfileConfigurationView: View {
-    @State private var username = ""
-    @State private var email = ""
-    @State private var phoneNumber = ""
-    @State private var selectedCountry = "Sélectionner un pays"
-    @State private var isNotificationsEnabled = true
+    @ObservedObject private var profileViewModel = ProfileViewModel()
+    @State private var showAlert = false
 
     var body: some View {
         Form {
             Section(header: Text("Informations de profil")) {
-                TextField("Nom d'utilisateur", text: $username)
-                TextField("Adresse e-mail", text: $email)
-                TextField("Numéro de téléphone", text: $phoneNumber)
-                Picker("Pays", selection: $selectedCountry) {
+                TextField("Nom d'utilisateur", text: $profileViewModel.userProfile.username)
+                TextField("Adresse e-mail", text: $profileViewModel.userProfile.email)
+                TextField("Numéro de téléphone", text: $profileViewModel.userProfile.phoneNumber)
+                Picker("Pays", selection: $profileViewModel.userProfile.selectedCountry) {
                     Text("Sélectionner un pays").tag("Sélectionner un pays")
                     Text("États-Unis").tag("États-Unis")
                     Text("Canada").tag("Canada")
@@ -31,13 +29,13 @@ struct ProfileConfigurationView: View {
             }
 
             Section(header: Text("Préférences")) {
-                Toggle("Activer les notifications", isOn: $isNotificationsEnabled)
+                Toggle("Activer les notifications", isOn: $profileViewModel.userProfile.isNotificationsEnabled)
             }
 
             Section {
                 Button(action: {
-                    // Ajoutez ici la logique pour enregistrer les modifications du profil
-                    // Vous pouvez également gérer la sauvegarde des données dans un modèle de profil
+                    // Enregistrez les modifications du profil sur Firebase
+                    profileViewModel.saveProfileToFirebase()
                 }) {
                     Text("Enregistrer les modifications")
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -45,6 +43,17 @@ struct ProfileConfigurationView: View {
             }
         }
         .navigationBarTitle("Configuration du Profil")
+        .onAppear {
+            // Chargement des données de profil depuis Firebase lors de l'affichage de la vue
+            profileViewModel.loadProfileFromFirebase()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Sauvegarde réussie"),
+                message: Text("Les modifications du profil ont été enregistrées avec succès sur Firebase."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 

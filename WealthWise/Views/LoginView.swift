@@ -13,6 +13,7 @@ struct LoginView: View {
     @State private var password = ""
     @State private var isRegistering = false
     @Binding var isLoggedIn: Bool
+    @State private var authenticationError: String? // Variable pour stocker les messages d'erreur
     
     var body: some View {
         VStack {
@@ -36,12 +37,20 @@ struct LoginView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
             
+            if let error = authenticationError {
+                Text(error)
+                    .foregroundColor(.red)
+            }
+            
             Button(action: {
+                authenticationError = nil // Réinitialisez l'erreur à nil
+                
                 if isRegistering {
                     // Inscription avec Firebase
                     Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                         if let error = error {
-                            // Gérer l'erreur d'inscription ici
+                            // Gérez l'erreur d'inscription ici
+                            authenticationError = error.localizedDescription
                             print("Erreur d'inscription : \(error.localizedDescription)")
                         } else {
                             // L'inscription a réussi, vous pouvez rediriger l'utilisateur vers le tableau de bord ou une autre vue principale
@@ -52,7 +61,8 @@ struct LoginView: View {
                     // Connexion avec Firebase
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                         if let error = error {
-                            // Gérer l'erreur de connexion ici
+                            // Gérez l'erreur de connexion ici
+                            authenticationError = error.localizedDescription
                             print("Erreur de connexion : \(error.localizedDescription)")
                         } else {
                             // La connexion a réussi, vous pouvez rediriger l'utilisateur vers le tableau de bord ou une autre vue principale

@@ -37,6 +37,8 @@
 		EC6108262AA8EC23005E48B8 /* SubscriptionManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */; };
 		EC6108282AA8EEBD005E48B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC6108272AA8EEBD005E48B8 /* GoogleService-Info.plist */; };
 		EC61082A2AA8F3F9005E48B8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */; };
+		ECDC23C42AA8FB1C0072296D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C32AA8FB1C0072296D /* UserProfile.swift */; };
+		ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -118,6 +120,8 @@
 		EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManagementView.swift; sourceTree = "<group>"; };
 		EC6108272AA8EEBD005E48B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		ECDC23C32AA8FB1C0072296D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				EC0298422AA4F80800EE2945 /* ExpenseCategory.swift */,
 				ECFD32D82AA4DE63001B9E3B /* RetirementPlanningCalculator.swift */,
 				EC0298532AA64C6200EE2945 /* Investment.swift */,
+				ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */,
+				ECDC23C32AA8FB1C0072296D /* UserProfile.swift */,
 				EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */,
 				ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */,
 				ECFD32952AA4C923001B9E3B /* Assets.xcassets */,
@@ -579,6 +585,7 @@
 				EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */,
 				ECFD32C12AA4D6DF001B9E3B /* DashboardView.swift in Sources */,
 				ECFD32DD2AA4F2E9001B9E3B /* TransactionDetailView.swift in Sources */,
+				ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */,
 				EC0298542AA64C6200EE2945 /* Investment.swift in Sources */,
 				EC6108182AA78C29005E48B8 /* RetirementPlanningView.swift in Sources */,
 				EC02983D2AA4F7A500EE2945 /* TransactionListView.swift in Sources */,
@@ -591,6 +598,7 @@
 				EC6108142AA67822005E48B8 /* LoginView.swift in Sources */,
 				ECFD32C92AA4D820001B9E3B /* InvestmentAssistanceView.swift in Sources */,
 				EC0298582AA670E600EE2945 /* ProfileConfigurationView.swift in Sources */,
+				ECDC23C42AA8FB1C0072296D /* UserProfile.swift in Sources */,
 				EC6108262AA8EC23005E48B8 /* SubscriptionManagementView.swift in Sources */,
 				EC0298522AA64C0E00EE2945 /* InvestmentManagementView.swift in Sources */,
 				EC0298562AA653B400EE2945 /* AlertsAndNotificationsView.swift in Sources */,
