@@ -8,6 +8,13 @@ target 'WealthWise' do
   # Pods for WealthWise
 
 pod 'CountryPickerSwift'
+pod 'Firebase'
+pod 'FirebaseFirestoreSwift'
+pod 'FirebaseCore'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'FirebaseStorage'
+pod 'FirebaseDatabase'
 
   target 'WealthWiseTests' do
     inherit! :search_paths

@@ -37,7 +37,18 @@ struct WealthManagementView: View {
                 NavigationLink(destination: TaxTrackingView()) { // Ajout du lien vers TaxTrackingView
                                     Text("Suivi des Impôts")
                                 }
-                Spacer()
+                
+                NavigationLink(destination: InsuranceManagementView()) { // Lien vers la vue "Gestion des Assurances"
+                                    Text("Gestion des Assurances")
+                                }
+                
+                NavigationLink(destination: LoanManagementView()) {
+                                   Text("Gestion des Prêts")
+                               }
+                
+                NavigationLink(destination: SubscriptionManagementView()) {
+                    Text("Gestion des Abonnements")
+                }
             }
             .padding()
             .navigationBarTitle("Gestion de Patrimoine")

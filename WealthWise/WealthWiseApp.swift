@@ -6,19 +6,24 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct WealthWiseApp: App {
-    @State private var isLoggedIn = false // Vous pouvez utiliser cette variable pour gérer l'état de connexion
+    @StateObject private var authenticationViewModel = AuthenticationViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
-            if isLoggedIn {
+            if authenticationViewModel.isLoggedIn {
                 ContentView()
+                    .environmentObject(authenticationViewModel)
             } else {
-                LoginView(isLoggedIn: $isLoggedIn)
+                LoginView(isLoggedIn: $authenticationViewModel.isLoggedIn)
             }
         }
     }
 }
-
