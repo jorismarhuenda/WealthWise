@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct MarketNewsAndUpdatesView: View {
+    @ObservedObject var viewModel = StockDataViewModel()
+    
     var body: some View {
-        VStack {
-            Text("Actualités et Mises à Jour du Marché")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
-            
-            // Ajoutez ici des éléments pour afficher les actualités financières et les mises à jour du marché
+        NavigationView {
+            List(viewModel.stockData) { stock in
+                VStack {
+                    Text(stock.companyName)
+                        .font(.headline)
+                    
+                    Text("Symbole: \(stock.symbol)")
+                        .font(.subheadline)
+                    
+                    Text("Prix: \(stock.latestPrice, specifier: "%.2f") USD")
+                        .font(.subheadline)
+                    
+                    Text("Changement: \(stock.change, specifier: "%.2f") (\(stock.changePercentage, specifier: "%.2f")%)")
+                        .font(.subheadline)
+                        .foregroundColor(stock.change >= 0 ? .green : .red)
+                }
+            }
+            .navigationBarTitle("Marchés Boursiers en Direct")
         }
-        .navigationBarTitle("Actualités et Mises à Jour du Marché")
+        .onAppear {
+            viewModel.clearStockData()
+            viewModel.fetchStockData()
+        }
     }
 }
 

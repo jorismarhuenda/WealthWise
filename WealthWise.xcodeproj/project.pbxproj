@@ -39,6 +39,10 @@
 		EC61082A2AA8F3F9005E48B8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */; };
 		ECDC23C42AA8FB1C0072296D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C32AA8FB1C0072296D /* UserProfile.swift */; };
 		ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */; };
+		ECDC23C82AAB88F10072296D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C72AAB88F10072296D /* WebView.swift */; };
+		ECDC23CA2AAB8BEB0072296D /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C92AAB8BEB0072296D /* StockData.swift */; };
+		ECDC23CC2AAB8C110072296D /* StockDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */; };
+		ECDC23CE2AAB8CA20072296D /* AlphaVantageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -122,6 +126,10 @@
 		EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		ECDC23C32AA8FB1C0072296D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		ECDC23C72AAB88F10072296D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		ECDC23C92AAB8BEB0072296D /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
+		ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataViewModel.swift; sourceTree = "<group>"; };
+		ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageResponse.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -241,6 +249,7 @@
 				EC6108212AA8E9D8005E48B8 /* LoanManagementView.swift */,
 				EC6108232AA8EA39005E48B8 /* LoanDetailEditView.swift */,
 				EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */,
+				ECDC23C72AAB88F10072296D /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +290,9 @@
 				ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */,
 				ECDC23C32AA8FB1C0072296D /* UserProfile.swift */,
 				EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */,
+				ECDC23C92AAB8BEB0072296D /* StockData.swift */,
+				ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */,
+				ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */,
 				ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */,
 				ECFD32952AA4C923001B9E3B /* Assets.xcassets */,
 				ECFD329A2AA4C923001B9E3B /* Persistence.swift */,
@@ -573,6 +585,7 @@
 				ECFD32D12AA4D85D001B9E3B /* PersonalizedTipsView.swift in Sources */,
 				EC6108202AA8E837005E48B8 /* InsuranceManagementView.swift in Sources */,
 				ECFD329B2AA4C923001B9E3B /* Persistence.swift in Sources */,
+				ECDC23CC2AAB8C110072296D /* StockDataViewModel.swift in Sources */,
 				ECFD32D52AA4DE42001B9E3B /* TransactionsView.swift in Sources */,
 				ECFD32C72AA4D80F001B9E3B /* WealthManagementView.swift in Sources */,
 				ECFD32CD2AA4D83F001B9E3B /* SecurityPrivacyView.swift in Sources */,
@@ -582,7 +595,9 @@
 				EC6108222AA8E9D8005E48B8 /* LoanManagementView.swift in Sources */,
 				EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */,
 				ECFD32C32AA4D6F8001B9E3B /* ExpenseTrackerView.swift in Sources */,
+				ECDC23C82AAB88F10072296D /* WebView.swift in Sources */,
 				EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */,
+				ECDC23CA2AAB8BEB0072296D /* StockData.swift in Sources */,
 				ECFD32C12AA4D6DF001B9E3B /* DashboardView.swift in Sources */,
 				ECFD32DD2AA4F2E9001B9E3B /* TransactionDetailView.swift in Sources */,
 				ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */,
@@ -600,6 +615,7 @@
 				EC0298582AA670E600EE2945 /* ProfileConfigurationView.swift in Sources */,
 				ECDC23C42AA8FB1C0072296D /* UserProfile.swift in Sources */,
 				EC6108262AA8EC23005E48B8 /* SubscriptionManagementView.swift in Sources */,
+				ECDC23CE2AAB8CA20072296D /* AlphaVantageResponse.swift in Sources */,
 				EC0298522AA64C0E00EE2945 /* InvestmentManagementView.swift in Sources */,
 				EC0298562AA653B400EE2945 /* AlertsAndNotificationsView.swift in Sources */,
 				ECFD32DF2AA4F32B001B9E3B /* TransactionDetail.swift in Sources */,

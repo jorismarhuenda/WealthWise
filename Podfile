@@ -15,6 +15,7 @@ pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
 pod 'FirebaseDatabase'
+pod 'Alamofire'
 
   target 'WealthWiseTests' do
     inherit! :search_paths

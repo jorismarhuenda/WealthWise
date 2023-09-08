@@ -32,7 +32,7 @@ struct DashboardView: View {
                                 }
                                 
                                 NavigationLink(destination: MarketNewsAndUpdatesView()) {
-                                    Text("Actualités et Mises à Jour du Marché")
+                                    Text("Marchés Boursiers en Direct")
                                 }
                 
                 NavigationLink(destination: RetirementTrackerView()) {

@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct AlertsAndNotificationsView: View {
-    @State private var dailyBudgetAlert = false
-    @State private var monthlyExpenseAlert = false
-    @State private var investmentNewsAlert = false
+    @AppStorage("DailyBudgetAlert") private var dailyBudgetAlert = false
+    @AppStorage("MonthlyExpenseAlert") private var monthlyExpenseAlert = false
+    @AppStorage("InvestmentNewsAlert") private var investmentNewsAlert = false
 
     var body: some View {
         Form {
@@ -27,6 +28,19 @@ struct AlertsAndNotificationsView: View {
             }
         }
         .navigationBarTitle("Alertes et Notifications")
+        .onAppear {
+            requestNotificationAuthorization()
+        }
+    }
+
+    private func requestNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                // Autorisé à envoyer des notifications
+            } else {
+                // Refusé d'envoyer des notifications
+            }
+        }
     }
 }
 

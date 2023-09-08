@@ -14,4 +14,7 @@ struct UserProfile: Identifiable, Decodable, Encodable {
     var phoneNumber: String = ""
     var selectedCountry: String = "Sélectionner un pays"
     var isNotificationsEnabled: Bool = true
+    var dailyBudgetAlert: Bool = true
+    var monthlyExpenseAlert: Bool = true
+    var investmentNewsAlert: Bool = true
 }
