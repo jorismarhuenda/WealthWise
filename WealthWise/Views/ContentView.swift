@@ -11,6 +11,7 @@ import Firebase
 
 struct ContentView: View {
     @State private var showingAlertsAndNotifications = false
+    @EnvironmentObject var userProfileWrapper: UserProfileWrapper
     
     var body: some View {
         NavigationView {

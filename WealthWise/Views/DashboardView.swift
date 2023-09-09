@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @Environment(\.presentationMode) var presentationMode
+    let transactionManager = TransactionManager()
     
     var body: some View {
         ScrollView {
@@ -27,9 +28,9 @@ struct DashboardView: View {
                     Text("Aide à l'Investissement")
                 }
                 
-                NavigationLink(destination: TransactionsView()) {
-                                    Text("Transactions")
-                                }
+                NavigationLink(destination: TransactionsView(transactionManager: transactionManager)) {
+                    Text("Transactions")
+                }
                                 
                                 NavigationLink(destination: MarketNewsAndUpdatesView()) {
                                     Text("Marchés Boursiers en Direct")

@@ -43,6 +43,8 @@
 		ECDC23CA2AAB8BEB0072296D /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C92AAB8BEB0072296D /* StockData.swift */; };
 		ECDC23CC2AAB8C110072296D /* StockDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */; };
 		ECDC23CE2AAB8CA20072296D /* AlphaVantageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */; };
+		ECDC23D22AACCFE50072296D /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23D12AACCFE50072296D /* TransactionManager.swift */; };
+		ECDC23D82AACD7C80072296D /* UserProfileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23D72AACD7C80072296D /* UserProfileWrapper.swift */; };
 		ECFD32922AA4C920001B9E3B /* WealthWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */; };
 		ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD32932AA4C920001B9E3B /* ContentView.swift */; };
 		ECFD32962AA4C923001B9E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECFD32952AA4C923001B9E3B /* Assets.xcassets */; };
@@ -130,6 +132,8 @@
 		ECDC23C92AAB8BEB0072296D /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataViewModel.swift; sourceTree = "<group>"; };
 		ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageResponse.swift; sourceTree = "<group>"; };
+		ECDC23D12AACCFE50072296D /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
+		ECDC23D72AACD7C80072296D /* UserProfileWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileWrapper.swift; sourceTree = "<group>"; };
 		ECFD328E2AA4C920001B9E3B /* WealthWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WealthWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFD32912AA4C920001B9E3B /* WealthWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WealthWiseApp.swift; sourceTree = "<group>"; };
 		ECFD32932AA4C920001B9E3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 			children = (
 				EC0298502AA64B8200EE2945 /* Views */,
 				EC0298462AA4F85500EE2945 /* Factice.swift */,
+				ECDC23D12AACCFE50072296D /* TransactionManager.swift */,
 				ECFD32DE2AA4F32B001B9E3B /* TransactionDetail.swift */,
 				EC02983A2AA4F78300EE2945 /* Transaction.swift */,
 				EC02983E2AA4F7C100EE2945 /* NetWorthDataPoint.swift */,
@@ -290,6 +295,7 @@
 				ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */,
 				ECDC23C32AA8FB1C0072296D /* UserProfile.swift */,
 				EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */,
+				ECDC23D72AACD7C80072296D /* UserProfileWrapper.swift */,
 				ECDC23C92AAB8BEB0072296D /* StockData.swift */,
 				ECDC23CB2AAB8C110072296D /* StockDataViewModel.swift */,
 				ECDC23CD2AAB8CA20072296D /* AlphaVantageResponse.swift */,
@@ -595,7 +601,9 @@
 				EC6108222AA8E9D8005E48B8 /* LoanManagementView.swift in Sources */,
 				EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */,
 				ECFD32C32AA4D6F8001B9E3B /* ExpenseTrackerView.swift in Sources */,
+				ECDC23D82AACD7C80072296D /* UserProfileWrapper.swift in Sources */,
 				ECDC23C82AAB88F10072296D /* WebView.swift in Sources */,
+				ECDC23D22AACCFE50072296D /* TransactionManager.swift in Sources */,
 				EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */,
 				ECDC23CA2AAB8BEB0072296D /* StockData.swift in Sources */,
 				ECFD32C12AA4D6DF001B9E3B /* DashboardView.swift in Sources */,

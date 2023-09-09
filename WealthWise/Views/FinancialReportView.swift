@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FinancialReportView: View {
+    let recentTransactions: [Transaction] // Chargez les transactions récentes de l'utilisateur ici
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -24,7 +26,7 @@ struct FinancialReportView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                IncomeExpenseSummaryView(income: 5000, expenses: 3500) // Créez une vue IncomeExpenseSummaryView pour afficher ces informations
+                IncomeExpenseSummaryView(income: 5000, expenses: 3500, recentTransactions: recentTransactions) // Passez les transactions récentes
                 
                 // Liste des transactions récentes
                 HStack {
@@ -33,7 +35,7 @@ struct FinancialReportView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                TransactionListView(transactions: recentTransactions) // Créez une vue TransactionListView pour afficher ces informations
+                TransactionListView(transactions: recentTransactions) // Passez les transactions récentes
                 
                 // Graphique de suivi de la valeur nette au fil du temps
                 HStack {
@@ -42,7 +44,7 @@ struct FinancialReportView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                NetWorthChartView(dataPoints: netWorthDataPoints) // Créez une vue NetWorthChartView pour afficher ces informations
+                NetWorthChartView(dataPoints: netWorthDataPoints) // Vous devez créer une vue NetWorthChartView appropriée pour cela
             }
             .padding()
         }
@@ -50,8 +52,13 @@ struct FinancialReportView: View {
     }
 }
 
+
+import SwiftUI
+
 struct FinancialReportView_Previews: PreviewProvider {
     static var previews: some View {
-        FinancialReportView()
+        let emptyTransactions: [Transaction] = []
+        
+        return FinancialReportView(recentTransactions: emptyTransactions)
     }
 }

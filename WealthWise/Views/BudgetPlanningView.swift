@@ -12,7 +12,8 @@ struct BudgetPlanningView: View {
     @State private var expenses: Double = 0
     @State private var budget: Double = 0
     @State private var bills: [Bill] = [] // Modèle de données pour les factures
-
+    let emptyTransactions: [Transaction] = []
+    
     var body: some View {
         VStack (spacing: 20) {
             Text("Planification de Budget")
@@ -49,10 +50,10 @@ struct BudgetPlanningView: View {
                     .foregroundColor(.red)
             }
             
-            NavigationLink(destination: FinancialReportView()) {
-                                Text("Voir le Rapport Financier")
-                                    .foregroundColor(.blue)
-                            }
+            NavigationLink(destination: FinancialReportView(recentTransactions: emptyTransactions)) {
+                Text("Voir le Rapport Financier")
+                    .foregroundColor(.blue)
+            }
             
             NavigationLink(destination: BillManagementView(bills: $bills)) {
                               Text("Gestion des Factures")

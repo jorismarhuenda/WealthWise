@@ -10,6 +10,15 @@ import SwiftUI
 struct IncomeExpenseSummaryView: View {
     let income: Double
     let expenses: Double
+    let recentTransactions: [Transaction] // Chargez les transactions de l'utilisateur ici
+
+    // Déclarez et initialisez dateFormatter ici
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,13 +26,12 @@ struct IncomeExpenseSummaryView: View {
             Text("Dépenses: $\(expenses, specifier: "%.2f")")
             Text("Solde: $\(income - expenses, specifier: "%.2f")")
         }
+        
+        List(recentTransactions) { transaction in
+            Text(transaction.description)
+            Text("\(transaction.amount, specifier: "%.2f") €")
+            Text("\(transaction.date, formatter: dateFormatter)")
+        }
     }
 }
 
-// Modèle de données factices pour les transactions récentes
-let recentTransactions: [Transaction] = [
-    Transaction(description: "Épicerie", amount: -100, date: Date()),
-    Transaction(description: "Salaire", amount: 3000, date: Date()),
-    Transaction(description: "Loyer", amount: -1200, date: Date()),
-    // ... Ajoutez plus de transactions ...
-]

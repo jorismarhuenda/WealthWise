@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct TransactionDetailView: View {
     var transaction: TransactionDetail
@@ -58,11 +59,14 @@ struct TransactionDetailView: View {
 
 struct TransactionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionDetailView(transaction: TransactionDetail(id: UUID(),
-                                                            beneficiary: "John Doe",
-                                                            date: Date(),
-                                                            amount: 150.0,
-                                                            category: "Alimentation",
-                                                            notes: "Déjeuner au restaurant"))
+        let transaction = TransactionDetail(id: UUID(),
+                                            beneficiary: "John Doe",
+                                            date: Date(),
+                                            amount: 150.0,
+                                            category: "Alimentation",
+                                            notes: "Déjeuner au restaurant")
+        
+        return TransactionDetailView(transaction: transaction)
     }
 }
+
