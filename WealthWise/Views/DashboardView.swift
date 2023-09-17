@@ -16,7 +16,7 @@ struct DashboardView: View {
             LazyVStack(spacing: 20) {
             
                 
-                NavigationLink(destination: BudgetPlanningView()) {
+                NavigationLink(destination: BudgetPlanningView(transactionManager: transactionManager)) {
                     Text("Planification Budgétaire")
                 }
                 

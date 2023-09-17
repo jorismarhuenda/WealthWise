@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    let transactions: [Transaction]
-
+    @ObservedObject var transactionManager: TransactionManager
+    @State var transactions: [Transaction] = []
+    
     var body: some View {
-        List(transactions) { transaction in
-            VStack(alignment: .leading) {
-                Text(transaction.description)
-                Text("$\(transaction.amount, specifier: "%.2f")")
-                    .foregroundColor(transaction.amount < 0 ? .red : .green)
+            List {
+                ForEach(transactionManager.transactions) { transaction in
+                    VStack(alignment: .leading) {
+                        Text(transaction.description)
+                        Text("$\(transaction.amount, specifier: "%.2f")")
+                            .foregroundColor(transaction.amount < 0 ? .red : .green)
+                    }
+                }
+                .onDelete { indexSet in
+                    // Supprimer les transactions sélectionnées
+                    for index in indexSet {
+                        let transactionToDelete = transactionManager.transactions[index]
+                        transactionManager.deleteTransaction(transaction: transactionToDelete)
+                    }
+                }
             }
         }
     }
-}
 
 // Modèle de données factices pour l'évolution de la valeur nette au fil du temps
 let netWorthDataPoints: [NetWorthDataPoint] = [

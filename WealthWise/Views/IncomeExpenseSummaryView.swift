@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct IncomeExpenseSummaryView: View {
-    let income: Double
-    let expenses: Double
-    let recentTransactions: [Transaction] // Chargez les transactions de l'utilisateur ici
+    @ObservedObject var transactionManager: TransactionManager
 
     // Déclarez et initialisez dateFormatter ici
     let dateFormatter: DateFormatter = {
@@ -21,17 +19,19 @@ struct IncomeExpenseSummaryView: View {
     }()
 
     var body: some View {
+        let income = transactionManager.transactions.filter { $0.amount > 0 }.reduce(0) { $0 + $1.amount }
+        let expenses = transactionManager.transactions.filter { $0.amount < 0 }.reduce(0) { $0 + $1.amount }
+
         VStack(alignment: .leading) {
             Text("Revenus: $\(income, specifier: "%.2f")")
             Text("Dépenses: $\(expenses, specifier: "%.2f")")
             Text("Solde: $\(income - expenses, specifier: "%.2f")")
         }
         
-        List(recentTransactions) { transaction in
+        List(transactionManager.transactions) { transaction in
             Text(transaction.description)
             Text("\(transaction.amount, specifier: "%.2f") €")
             Text("\(transaction.date, formatter: dateFormatter)")
         }
     }
 }
-

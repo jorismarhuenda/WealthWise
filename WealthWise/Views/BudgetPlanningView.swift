@@ -13,6 +13,7 @@ struct BudgetPlanningView: View {
     @State private var budget: Double = 0
     @State private var bills: [Bill] = [] // Modèle de données pour les factures
     let emptyTransactions: [Transaction] = []
+    @ObservedObject var transactionManager: TransactionManager
     
     var body: some View {
         VStack (spacing: 20) {
@@ -50,7 +51,7 @@ struct BudgetPlanningView: View {
                     .foregroundColor(.red)
             }
             
-            NavigationLink(destination: FinancialReportView(recentTransactions: emptyTransactions)) {
+            NavigationLink(destination: FinancialReportView(transactionManager: transactionManager)) {
                 Text("Voir le Rapport Financier")
                     .foregroundColor(.blue)
             }
@@ -70,7 +71,7 @@ struct BudgetPlanningView: View {
 
 struct BudgetPlanningView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetPlanningView()
+        let transactionManager = TransactionManager() // Initialisez votre TransactionManager ici
+        return BudgetPlanningView(transactionManager: transactionManager)
     }
 }
-

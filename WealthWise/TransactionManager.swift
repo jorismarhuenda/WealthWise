@@ -54,4 +54,29 @@ class TransactionManager: ObservableObject {
                 }
             }
     }
+    
+    func deleteTransaction(transaction: Transaction) {
+        let db = Firestore.firestore()
+        
+        // Vérifiez si l'utilisateur actuel est autorisé à supprimer cette transaction
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            print("L'utilisateur n'est pas connecté.")
+            return
+        }
+        
+        // Vérifiez si l'identifiant de l'utilisateur correspond à l'identifiant de l'utilisateur associé à la transaction
+        guard transaction.userID == currentUserID else {
+            print("L'utilisateur actuel n'est pas autorisé à supprimer cette transaction.")
+            return
+        }
+        
+        // Supprimez la transaction de la base de données
+        db.collection("transactions").document(transaction.id).delete { error in
+            if let error = error {
+                print("Erreur lors de la suppression de la transaction : \(error.localizedDescription)")
+            } else {
+                print("Transaction supprimée avec succès.")
+            }
+        }
+    }
 }

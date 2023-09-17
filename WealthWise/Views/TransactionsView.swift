@@ -35,7 +35,7 @@ struct TransactionsView: View {
                     AddTransactionView(transactionManager: transactionManager, userID: userProfileWrapper.userProfile.id)
                 }
 
-                TransactionsListView(transactionManager: transactionManager)
+                TransactionListView(transactionManager: transactionManager)
             }
             .navigationBarTitle("Transactions")
         }
@@ -45,27 +45,6 @@ struct TransactionsView: View {
 struct TransactionsView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionsView(transactionManager: TransactionManager())
-    }
-}
-
-struct TransactionsListView: View {
-    @ObservedObject var transactionManager: TransactionManager
-
-    
-    // Déclarez et initialisez dateFormatter ici
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter
-    }()
-    
-    var body: some View {
-        List(transactionManager.transactions) { transaction in
-            Text(transaction.description)
-            Text("\(transaction.amount, specifier: "%.2f") €")
-            Text("\(transaction.date, formatter: dateFormatter)")
-        }
     }
 }
 

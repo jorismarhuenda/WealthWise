@@ -7,10 +7,12 @@
 
 import Foundation
 import Firebase
+import LocalAuthentication
 
 class AuthenticationViewModel: ObservableObject {
     @Published var isLoggedIn = false
     @Published var error: String? // Variable pour stocker les messages d'erreur
+    @Published var useFaceID: Bool = false
     
     enum AuthMethod {
         case email, username, phoneNumber
@@ -72,4 +74,30 @@ class AuthenticationViewModel: ObservableObject {
             print("Erreur de déconnexion : \(signOutError.localizedDescription)")
         }
     }
+    
+    func toggleFaceID() {
+            useFaceID.toggle()
+        }
+        
+        func authenticateWithBiometrics(completion: @escaping (Bool) -> Void) {
+            let context = LAContext()
+            
+            var error: NSError?
+            
+            // Vérifier si l'appareil prend en charge la biométrie (Face ID ou Touch ID)
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Utilisez votre visage pour vous authentifier."
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
+                    DispatchQueue.main.async {
+                        completion(success)
+                    }
+                }
+            } else {
+                // La biométrie n'est pas prise en charge ou configurée
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+            }
+        }
 }

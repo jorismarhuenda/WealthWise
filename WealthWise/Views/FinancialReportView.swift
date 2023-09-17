@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FinancialReportView: View {
-    let recentTransactions: [Transaction] // Chargez les transactions récentes de l'utilisateur ici
+    @ObservedObject var transactionManager: TransactionManager
 
     var body: some View {
         ScrollView {
@@ -26,7 +26,7 @@ struct FinancialReportView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                IncomeExpenseSummaryView(income: 5000, expenses: 3500, recentTransactions: recentTransactions) // Passez les transactions récentes
+                IncomeExpenseSummaryView(transactionManager: transactionManager)
                 
                 // Liste des transactions récentes
                 HStack {
@@ -35,7 +35,7 @@ struct FinancialReportView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                TransactionListView(transactions: recentTransactions) // Passez les transactions récentes
+                TransactionListView(transactionManager: transactionManager)
                 
                 // Graphique de suivi de la valeur nette au fil du temps
                 HStack {
@@ -53,12 +53,11 @@ struct FinancialReportView: View {
 }
 
 
-import SwiftUI
-
 struct FinancialReportView_Previews: PreviewProvider {
     static var previews: some View {
-        let emptyTransactions: [Transaction] = []
+        let transactionManager = TransactionManager() // Initialisez un objet TransactionManager pour la prévisualisation
         
-        return FinancialReportView(recentTransactions: emptyTransactions)
+        return FinancialReportView( transactionManager: transactionManager)
     }
 }
+
