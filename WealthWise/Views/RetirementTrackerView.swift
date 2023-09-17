@@ -56,16 +56,6 @@ struct RetirementTrackerView: View {
                         .cornerRadius(10)
                 }
                 
-                Button(action: {
-                    isPlanningRetirement = true
-                }) {
-                    Text("Planifier la Retraite")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                
                 Spacer()
             }
             .padding()
