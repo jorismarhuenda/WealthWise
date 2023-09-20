@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NetWorthChartView: View {
     let dataPoints: [NetWorthDataPoint]
-    
+
     var body: some View {
         GeometryReader { geometry in
             Path { path in
@@ -18,11 +18,11 @@ struct NetWorthChartView: View {
                 let valueRange = maxValue - minValue
                 let xInterval = geometry.size.width / CGFloat(dataPoints.count - 1)
                 let yInterval = geometry.size.height / CGFloat(valueRange)
-                
+
                 for (index, dataPoint) in dataPoints.enumerated() {
                     let x = CGFloat(index) * xInterval
                     let y = CGFloat(dataPoint.netWorth - minValue) * yInterval
-                    
+
                     if index == 0 {
                         path.move(to: CGPoint(x: x, y: geometry.size.height - y))
                     } else {
@@ -39,6 +39,5 @@ struct NetWorthChartView: View {
 struct NetWorthChartView_Previews: PreviewProvider {
     static var previews: some View {
         NetWorthChartView(dataPoints: netWorthDataPoints)
-   
     }
 }

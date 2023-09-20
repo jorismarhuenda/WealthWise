@@ -9,52 +9,51 @@ import SwiftUI
 
 struct PieChartView: View {
     let dataPoints: [ExpenseCategory]
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(0..<dataPoints.count) { index in
                     let startAngle: Angle = self.startAngle(for: index)
                     let endAngle: Angle = self.endAngle(for: index)
-                    
+
                     PieSlice(startAngle: startAngle, endAngle: endAngle, dataPoint: dataPoints[index])
                         .foregroundColor(self.sliceColor(index: index))
                         .overlay(PieSliceLabel(dataPoint: dataPoints[index], startAngle: startAngle, endAngle: endAngle))
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.width)
+            .frame(width: geometry.size.width, height: geometry.size.width) // Ajustez la taille du graphique ici
         }
     }
-    
+
     private func startAngle(for index: Int) -> Angle {
         guard index >= 0 && index < dataPoints.count else {
             return .zero
         }
-        
+
         let total = dataPoints.reduce(0) { $0 + $1.amount }
         let normalizedValue = dataPoints[index].amount / total
-        
+
         return .degrees(360 * normalizedValue)
     }
-    
+
     private func endAngle(for index: Int) -> Angle {
         guard index >= 0 && index < dataPoints.count else {
             return .zero
         }
-        
+
         let total = dataPoints.reduce(0) { $0 + $1.amount }
         let normalizedValue = dataPoints[index].amount / total
-        
+
         return .degrees(360 * normalizedValue + startAngle(for: index).degrees)
     }
-    
+
     private func sliceColor(index: Int) -> Color {
         // Vous pouvez personnaliser les couleurs des tranches ici en fonction de l'index
         let colors: [Color] = [.blue, .green, .orange, .red, .purple]
         return colors[index % colors.count]
     }
 }
-
 
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {

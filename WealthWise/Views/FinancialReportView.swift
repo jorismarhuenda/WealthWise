@@ -14,44 +14,35 @@ struct FinancialReportView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 Text("Rapport Financier")
-                    .font(.title)
-                
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 10)
+
                 // Graphique de répartition des dépenses
-                PieChartView(dataPoints: expenseCategories) // Vous devez créer une vue PieChartView appropriée pour cela
+                PieChartView(dataPoints: expenseCategories)
+                    .frame(height: 200) // Réglez la hauteur du graphique
                 
                 // Résumé des revenus et des dépenses
-                HStack {
-                    Text("Résumé des Revenus")
-                        .font(.headline)
-                    Spacer()
+                Section(header: Text("Résumé des Revenus et des Dépenses").font(.headline)) {
+                    IncomeExpenseSummaryView(transactionManager: transactionManager)
                 }
-                .padding(.bottom, 10)
-                IncomeExpenseSummaryView(transactionManager: transactionManager)
-                
+
                 // Liste des transactions récentes
-                HStack {
-                    Text("Transactions Récentes")
-                        .font(.headline)
-                    Spacer()
+                Section(header: Text("Transactions Récentes").font(.headline)) {
+                    TransactionListView(transactionManager: transactionManager)
                 }
-                .padding(.bottom, 10)
-                TransactionListView(transactionManager: transactionManager)
-                
+
                 // Graphique de suivi de la valeur nette au fil du temps
-                HStack {
-                    Text("Évolution de la Valeur Nette")
-                        .font(.headline)
-                    Spacer()
+                Section(header: Text("Évolution de la Valeur Nette").font(.headline)) {
+                    NetWorthChartView(dataPoints: netWorthDataPoints)
+                        .frame(height: 200) // Réglez la hauteur du graphique
                 }
-                .padding(.bottom, 10)
-                NetWorthChartView(dataPoints: netWorthDataPoints) // Vous devez créer une vue NetWorthChartView appropriée pour cela
             }
             .padding()
         }
-        .navigationBarTitle("Rapport Financier")
+        .navigationBarTitle("Rapport Financier", displayMode: .inline)
     }
 }
-
 
 struct FinancialReportView_Previews: PreviewProvider {
     static var previews: some View {
