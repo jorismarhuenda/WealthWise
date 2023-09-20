@@ -16,8 +16,11 @@ struct RiskAnalysisView: View {
             Text("Analyse de Risque")
                 .font(.title)
             
-            Text("Votre profil de risque actuel : \(riskLevels[riskLevel])")
-                .padding()
+            // Afficher la phrase seulement si un niveau de risque est sélectionné
+            if let selectedRisk = riskLevels[safe: riskLevel] {
+                Text("Votre profil de risque actuel : \(selectedRisk)")
+                    .padding()
+            }
             
             Picker(selection: $riskLevel, label: Text("Sélectionnez votre niveau de risque")) {
                 ForEach(0 ..< riskLevels.count) { index in
@@ -27,28 +30,43 @@ struct RiskAnalysisView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             
-            Text("Description de chaque niveau de risque :")
+            Text("Description du niveau de risque :")
                 .font(.headline)
                 .padding(.top)
             
-            Text("Très Faible : Vous préférez des investissements très sûrs avec des rendements modestes.")
-                .padding(.horizontal)
-            
-            Text("Faible : Vous préférez des investissements sécurisés, mais êtes ouvert à un peu plus de risque pour de meilleurs rendements.")
-                .padding(.horizontal)
-            
-            Text("Modéré : Vous êtes prêt à prendre des risques modérés pour des rendements plus élevés.")
-                .padding(.horizontal)
-            
-            Text("Élevé : Vous êtes à l'aise avec des niveaux de risque plus élevés pour des rendements potentiellement élevés.")
-                .padding(.horizontal)
-            
-            Text("Très Élevé : Vous êtes prêt à prendre des risques importants pour la possibilité de rendements très élevés.")
-                .padding(.horizontal)
+            // Afficher la description seulement si un niveau de risque est sélectionné
+            if let selectedRisk = riskLevels[safe: riskLevel] {
+                Text(selectedRiskDescription(selectedRisk))
+                    .padding(.horizontal)
+            }
             
             Spacer()
         }
         .padding()
+    }
+    
+    // Fonction pour obtenir la description du niveau de risque sélectionné
+    func selectedRiskDescription(_ risk: String) -> String {
+        switch risk {
+        case "Très Faible":
+            return "Vous préférez des investissements très sûrs avec des rendements modestes."
+        case "Faible":
+            return "Vous préférez des investissements sécurisés, mais êtes ouvert à un peu plus de risque pour de meilleurs rendements."
+        case "Modéré":
+            return "Vous êtes prêt à prendre des risques modérés pour des rendements plus élevés."
+        case "Élevé":
+            return "Vous êtes à l'aise avec des niveaux de risque plus élevés pour des rendements potentiellement élevés."
+        case "Très Élevé":
+            return "Vous êtes prêt à prendre des risques importants pour la possibilité de rendements très élevés."
+        default:
+            return ""
+        }
+    }
+}
+
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }
 
