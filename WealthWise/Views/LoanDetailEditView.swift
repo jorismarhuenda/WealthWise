@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoanDetailEditView: View {
     @Binding var loan: Loan
@@ -32,20 +33,36 @@ struct LoanDetailEditView: View {
         .navigationTitle("Modifier le Prêt")
     }
     
-    // Fonction pour enregistrer les modifications du prêt
     func saveLoan() {
-        // Vous pouvez ajouter ici la logique pour sauvegarder les modifications du prêt (par exemple, dans un modèle de données ou une base de données).
-        // Pour l'exemple, nous imprimons simplement les détails du prêt.
-        print("Modification du prêt :")
-        print("Nom : \(loan.name)")
-        print("Montant : \(loan.amount) €")
-        print("Taux d'Intérêt : \(loan.interestRate)%")
-        print("Durée : \(loan.term) mois")
+        // Assurez-vous que l'utilisateur est connecté
+        guard let user = Auth.auth().currentUser else {
+            // L'utilisateur n'est pas connecté, gérer cette situation (par exemple, afficher une alerte)
+            // Vous pouvez afficher une alerte pour informer l'utilisateur qu'il doit se connecter
+            // avant de modifier un prêt, ou effectuer d'autres actions appropriées.
+            return
+        }
+        
+        // Mettez à jour les détails du prêt dans Firestore
+        let db = Firestore.firestore()
+        db.collection("loans").document(user.uid).collection("userLoans").document(loan.id).updateData([
+            "name": loan.name,
+            "amount": loan.amount,
+            "interestRate": loan.interestRate,
+            "term": loan.term
+        ]) { error in
+            if let error = error {
+                print("Erreur lors de la mise à jour du prêt : \(error)")
+            } else {
+                // Les modifications ont été enregistrées avec succès
+                print("Les modifications du prêt ont été enregistrées avec succès.")
+            }
+        }
     }
+
 }
 
 struct LoanDetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        LoanDetailEditView(loan: .constant(Loan(name: "Prêt Auto", amount: 20000, interestRate: 5.5, term: 48)))
+        LoanDetailEditView(loan: .constant(Loan(id: UUID().uuidString, name: "Prêt Auto", amount: 20000, interestRate: 5.5, term: 48)))
     }
 }

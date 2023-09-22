@@ -113,40 +113,27 @@ struct BillManagementView: View {
     
     // Fonction pour supprimer une facture
     func deleteBill(at offsets: IndexSet) {
-        guard let user = Auth.auth().currentUser else {
-            return // L'utilisateur n'est pas connecté, gestion de l'erreur
+        guard let currentUser = Auth.auth().currentUser else {
+            // L'utilisateur n'est pas connecté
+            return
         }
-
+        
+        // Supprimer la facture à partir de Firestore
         let db = Firestore.firestore()
-
-        // Supprimer localement
-        bills.remove(atOffsets: offsets)
-
-        // Supprimer de Firebase
-        let batch = db.batch()
-        var indicesToDelete: [Int] = []
-
-        for index in offsets {
-            if index >= 0 && index < bills.count {
-                let bill = bills[index]
-                if bill.userID == user.uid {
-                    let billRef = db.collection("bills").document(bill.id.uuidString)
-                    batch.deleteDocument(billRef)
+        let billsRef = db.collection("bills")
+        
+        let billToDelete = bills[offsets.first!] // Obtenez la facture à supprimer
+        
+        billsRef
+            .document(billToDelete.id.uuidString)
+            .delete { error in
+                if let error = error {
+                    print("Erreur lors de la suppression de la facture : \(error.localizedDescription)")
+                } else {
+                    // La facture a été supprimée avec succès
+                    self.bills.remove(atOffsets: offsets)
                 }
-                indicesToDelete.append(index)
             }
-        }
-
-        // Supprimer les indices localement
-        indicesToDelete.forEach { index in
-            bills.remove(at: index)
-        }
-
-        batch.commit { error in
-            if let error = error {
-                print("Erreur lors de la suppression de la facture sur Firebase : \(error)")
-            }
-        }
     }
 }
 
