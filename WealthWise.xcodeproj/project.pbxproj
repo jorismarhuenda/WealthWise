@@ -22,7 +22,6 @@
 		EC0298492AA638FC00EE2945 /* DebtManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298482AA638FC00EE2945 /* DebtManagementView.swift */; };
 		EC02984F2AA648D600EE2945 /* SavingsPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02984E2AA648D600EE2945 /* SavingsPlanningView.swift */; };
 		EC0298522AA64C0E00EE2945 /* InvestmentManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298512AA64C0E00EE2945 /* InvestmentManagementView.swift */; };
-		EC0298542AA64C6200EE2945 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298532AA64C6200EE2945 /* Investment.swift */; };
 		EC0298562AA653B400EE2945 /* AlertsAndNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298552AA653B400EE2945 /* AlertsAndNotificationsView.swift */; };
 		EC0298582AA670E600EE2945 /* ProfileConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298572AA670E600EE2945 /* ProfileConfigurationView.swift */; };
 		EC6108142AA67822005E48B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108132AA67822005E48B8 /* LoginView.swift */; };
@@ -111,7 +110,6 @@
 		EC0298482AA638FC00EE2945 /* DebtManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtManagementView.swift; sourceTree = "<group>"; };
 		EC02984E2AA648D600EE2945 /* SavingsPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsPlanningView.swift; sourceTree = "<group>"; };
 		EC0298512AA64C0E00EE2945 /* InvestmentManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentManagementView.swift; sourceTree = "<group>"; };
-		EC0298532AA64C6200EE2945 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
 		EC0298552AA653B400EE2945 /* AlertsAndNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndNotificationsView.swift; sourceTree = "<group>"; };
 		EC0298572AA670E600EE2945 /* ProfileConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurationView.swift; sourceTree = "<group>"; };
 		EC6108132AA67822005E48B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				EC02983E2AA4F7C100EE2945 /* NetWorthDataPoint.swift */,
 				EC0298422AA4F80800EE2945 /* ExpenseCategory.swift */,
 				ECFD32D82AA4DE63001B9E3B /* RetirementPlanningCalculator.swift */,
-				EC0298532AA64C6200EE2945 /* Investment.swift */,
 				ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */,
 				ECDC23C32AA8FB1C0072296D /* UserProfile.swift */,
 				EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */,
@@ -609,7 +606,6 @@
 				ECFD32C12AA4D6DF001B9E3B /* DashboardView.swift in Sources */,
 				ECFD32DD2AA4F2E9001B9E3B /* TransactionDetailView.swift in Sources */,
 				ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */,
-				EC0298542AA64C6200EE2945 /* Investment.swift in Sources */,
 				EC6108182AA78C29005E48B8 /* RetirementPlanningView.swift in Sources */,
 				EC02983D2AA4F7A500EE2945 /* TransactionListView.swift in Sources */,
 				ECFD32942AA4C920001B9E3B /* ContentView.swift in Sources */,
