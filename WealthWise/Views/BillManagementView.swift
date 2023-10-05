@@ -8,9 +8,6 @@
 import SwiftUI
 import Firebase
 
-import SwiftUI
-import Firebase
-
 struct BillManagementView: View {
     @State private var newBillName = ""
     @State private var newBillAmount = ""

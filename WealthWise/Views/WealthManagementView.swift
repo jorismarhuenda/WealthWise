@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WealthManagementView: View {
+    
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 20) {
@@ -17,10 +18,6 @@ struct WealthManagementView: View {
                 NavigationLink(destination: WealthSummaryView()) { // Ajout du lien vers le récapitulatif de patrimoine
                                    Text("Récapitulatif de Patrimoine")
                                }
-                
-                NavigationLink(destination: InvestmentPortfolioView()) {
-                    Text("Portfolio d'Investissement")
-                }
                 
                 NavigationLink(destination: DebtManagementView()) {
                                     Text("Gestion de Dettes")

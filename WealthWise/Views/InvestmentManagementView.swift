@@ -56,6 +56,13 @@ struct InvestmentManagementView: View {
             }
             .padding()
         }
+        NavigationLink(destination: InvestmentPortfolioView(investments: investments)) {
+                            Text("Voir le Portfolio")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
         .onAppear(perform: fetchInvestments)
     }
 
@@ -173,7 +180,7 @@ struct InvestmentRowView: View {
             Text(investment.name)
             Spacer()
             Text("\(investment.quantity) actions")
-            Text("$\(investment.totalValue, specifier: "%.2f")")
+            Text("\(investment.totalValue, specifier: "%.2f") €")
         }
     }
 }

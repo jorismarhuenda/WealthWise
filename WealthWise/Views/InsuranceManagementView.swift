@@ -153,7 +153,7 @@ struct InsurancePolicyRow: View {
         HStack {
             Text(policy.name)
             Spacer()
-            Text("$\(policy.premium, specifier: "%.2f")/mois")
+            Text("\(policy.premium, specifier: "%.2f") €/mois")
         }
     }
 }

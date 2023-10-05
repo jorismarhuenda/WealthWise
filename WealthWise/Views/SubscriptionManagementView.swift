@@ -143,7 +143,7 @@ struct SubscriptionRow: View {
         HStack {
             Text(subscription.name)
             Spacer()
-            Text("$\(subscription.cost, specifier: "%.2f")/mois")
+            Text("\(subscription.cost, specifier: "%.2f") €/mois")
         }
     }
 }

@@ -15,6 +15,9 @@ struct WealthWiseApp: App {
 
     init() {
         FirebaseApp.configure()
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = false
+        Firestore.firestore().settings = settings
     }
 
     var body: some Scene {
