@@ -70,39 +70,30 @@ struct DebtManagementView: View {
     }
 
     func deleteDebt(at offsets: IndexSet) {
-        // Marquer les dettes comme supprimées localement
-        offsets.forEach { index in
-            if debts.indices.contains(index) {
-                debts[index].isDeleted = true
-            }
+        guard let user = Auth.auth().currentUser else {
+            // L'utilisateur n'est pas connecté
+            return
         }
-        
-        // Mettre à jour la liste locale
-        debts.removeAll { debt in
-            return debt.isDeleted
-        }
-        
-        // Supprimer les dettes de Firestore
-        if let user = Auth.auth().currentUser {
-            let userId = user.uid
-            let db = Firestore.firestore()
-            
-            offsets.forEach { index in
-                if debts.indices.contains(index) {
-                    let debtToDelete = debts[index]
-                    let documentId = debtToDelete.id
-                    
-                    print("Tentative de suppression de la dette avec l'ID \(documentId)")
-                    
-                    db.collection("users").document(userId).collection("debts").document(documentId).delete { error in
-                        if let error = error {
-                            print("Erreur lors de la suppression de la dette dans Firestore: \(error.localizedDescription)")
-                        } else {
-                            print("La dette avec l'ID \(documentId) a été supprimée avec succès de Firestore")
+
+        let userId = user.uid
+        let db = Firestore.firestore()
+        let debtsRef = db.collection("users").document(userId).collection("debts")
+
+        let debtsToDelete = offsets.map { debts[$0] } // Obtenez la liste des dettes à supprimer
+
+        for debtToDelete in debtsToDelete {
+            debtsRef
+                .document(debtToDelete.id)
+                .delete { error in
+                    if let error = error {
+                        print("Erreur lors de la suppression de la dette dans Firestore: \(error.localizedDescription)")
+                    } else {
+                        // La dette a été supprimée avec succès
+                        if let index = self.debts.firstIndex(where: { $0.id == debtToDelete.id }) {
+                            self.debts.remove(at: index)
                         }
                     }
                 }
-            }
         }
     }
 }

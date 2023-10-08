@@ -134,42 +134,32 @@ struct InvestmentManagementView: View {
     }
 
     func deleteInvestment(at offsets: IndexSet) {
-        guard let currentUserID = currentUserID else {
-            // L'utilisateur n'est pas connecté
-            return
-        }
+            guard let currentUserID = currentUserID else {
+                // L'utilisateur n'est pas connecté
+                return
+            }
 
-        // Supprimer l'investissement à partir de Firestore
-        let db = Firestore.firestore()
-        let investmentsRef = db.collection("investments")
+            // Supprimer l'investissement à partir de Firestore
+            let db = Firestore.firestore()
+            let investmentsRef = db.collection("investments")
 
-        offsets.forEach { offset in
-            let investmentToDelete = investments[offset] // Obtenez l'investissement à supprimer
+            let investmentsToDelete = offsets.map { investments[$0] } // Obtenez la liste des investissements à supprimer
 
-            investmentsRef
-                .whereField("id", isEqualTo: investmentToDelete.id)
-                .whereField("userId", isEqualTo: currentUserID)
-                .getDocuments { (querySnapshot, error) in
-                    if let error = error {
-                        print("Erreur lors de la suppression de l'investissement : \(error.localizedDescription)")
-                    } else {
-                        // Supprimez le document correspondant à l'investissement
-                        for document in querySnapshot!.documents {
-                            document.reference.delete { error in
-                                if let error = error {
-                                    print("Erreur lors de la suppression de l'investissement : \(error.localizedDescription)")
-                                } else {
-                                    // L'investissement a été supprimé avec succès
-                                    if let index = self.investments.firstIndex(where: { $0.id == investmentToDelete.id }) {
-                                        self.investments.remove(at: index)
-                                    }
-                                }
+            for investmentToDelete in investmentsToDelete {
+                investmentsRef
+                    .document(investmentToDelete.id)
+                    .delete { error in
+                        if let error = error {
+                            print("Erreur lors de la suppression de l'investissement : \(error.localizedDescription)")
+                        } else {
+                            // L'investissement a été supprimé avec succès
+                            if let index = self.investments.firstIndex(where: { $0.id == investmentToDelete.id }) {
+                                self.investments.remove(at: index)
                             }
                         }
                     }
-                }
+            }
         }
-    }
 }
 
 struct InvestmentRowView: View {
