@@ -11,46 +11,76 @@ struct WealthManagementView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 20) {
-                Text("Gestion de Patrimoine")
-                    .font(.title)
+            VStack(spacing: 20) {
                 
-                NavigationLink(destination: WealthSummaryView()) { // Ajout du lien vers le récapitulatif de patrimoine
-                                   Text("Récapitulatif de Patrimoine")
-                               }
+                NavigationLink(destination: WealthSummaryView()) {
+                    WealthManagementItem(title: "Récapitulatif de Patrimoine", icon: "chart.pie.fill")
+                }
                 
                 NavigationLink(destination: DebtManagementView()) {
-                                    Text("Gestion de Dettes")
-                                }
+                    WealthManagementItem(title: "Gestion de Dettes", icon: "creditcard.fill")
+                }
                 
                 NavigationLink(destination: SavingsPlanningView()) {
-                                   Text("Planification de l'Épargne")
-                               }
+                    WealthManagementItem(title: "Planification de l'Épargne", icon: "dollarsign.circle.fill")
+                }
                 
                 NavigationLink(destination: InvestmentManagementView()) {
-                    Text("Gestion des Investissements")
+                    WealthManagementItem(title: "Gestion des Investissements", icon: "chart.bar.fill")
                 }
                 
-                NavigationLink(destination: TaxTrackingView()) { // Ajout du lien vers TaxTrackingView
-                                    Text("Suivi des Impôts")
-                                }
+                NavigationLink(destination: TaxTrackingView()) {
+                    WealthManagementItem(title: "Suivi des Impôts", icon: "doc.text.fill")
+                }
                 
-                NavigationLink(destination: InsuranceManagementView()) { // Lien vers la vue "Gestion des Assurances"
-                                    Text("Gestion des Assurances")
-                                }
+                NavigationLink(destination: InsuranceManagementView()) {
+                    WealthManagementItem(title: "Gestion des Assurances", icon: "shield.fill")
+                }
                 
                 NavigationLink(destination: LoanManagementView()) {
-                                   Text("Gestion des Prêts")
-                               }
+                    WealthManagementItem(title: "Gestion des Prêts", icon: "creditcard.fill")
+                }
                 
                 NavigationLink(destination: SubscriptionManagementView()) {
-                    Text("Gestion des Abonnements")
+                    WealthManagementItem(title: "Gestion des Abonnements", icon: "newspaper.fill")
                 }
+                
+                Spacer()
             }
             .padding()
             .navigationBarTitle("Gestion de Patrimoine")
+        }
     }
 }
+
+struct WealthManagementItem: View {
+    let title: String
+    let icon: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.white)
+                .padding(8)
+            
+            Text(title)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            
+            Spacer()
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                .shadow(radius: 5)
+        )
+        .foregroundColor(.white)
+        .cornerRadius(10)
+    }
 }
 
 struct WealthManagementView_Previews: PreviewProvider {

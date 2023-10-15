@@ -14,39 +14,37 @@ struct DashboardView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 20) {
-            
-                
                 NavigationLink(destination: BudgetPlanningView(transactionManager: transactionManager)) {
-                    Text("Planification Budgétaire")
+                    DashboardListItem(title: "Planification Budgétaire", image: "chart.pie.fill")
                 }
                 
                 NavigationLink(destination: WealthManagementView()) {
-                    Text("Gestion de Patrimoine")
+                    DashboardListItem(title: "Gestion de Patrimoine", image: "banknote.fill")
                 }
                 
                 NavigationLink(destination: InvestmentAssistanceView()) {
-                    Text("Aide à l'Investissement")
+                    DashboardListItem(title: "Aide à l'Investissement", image: "arrow.up.arrow.down.circle.fill")
                 }
                 
                 NavigationLink(destination: TransactionsView(transactionManager: transactionManager)) {
-                    Text("Transactions")
+                    DashboardListItem(title: "Transactions", image: "creditcard.fill")
                 }
-                                
-                                NavigationLink(destination: MarketNewsAndUpdatesView()) {
-                                    Text("Marchés Boursiers en Direct")
-                                }
+                
+                NavigationLink(destination: MarketNewsAndUpdatesView()) {
+                    DashboardListItem(title: "Marchés Boursiers en Direct", image: "newspaper.fill")
+                }
                 
                 NavigationLink(destination: RetirementTrackerView()) {
-                    Text("Suivi de la Retraite")
+                    DashboardListItem(title: "Suivi de la Retraite", image: "chart.bar.fill")
                 }
             }
+            .padding()
+        }
         .listStyle(GroupedListStyle())
-            .navigationBarTitle("Tableau de Bord")
+        .navigationBarTitle("Tableau de Bord")
     }
 }
-}
 
-    
 struct DashboardListItem: View {
     let title: String
     let image: String
@@ -56,7 +54,7 @@ struct DashboardListItem: View {
             Image(systemName: image)
                 .resizable()
                 .frame(width: 30, height: 30)
-                .foregroundColor(.blue)
+                .foregroundColor(Color.blue)
             
             Text(title)
                 .font(.headline)
@@ -67,6 +65,10 @@ struct DashboardListItem: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.blue, lineWidth: 1)
+        )
     }
 }
 

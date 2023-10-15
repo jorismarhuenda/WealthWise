@@ -36,6 +36,7 @@
 		EC6108262AA8EC23005E48B8 /* SubscriptionManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */; };
 		EC6108282AA8EEBD005E48B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC6108272AA8EEBD005E48B8 /* GoogleService-Info.plist */; };
 		EC61082A2AA8F3F9005E48B8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */; };
+		ECD527912ADC2DC500CBF431 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD527902ADC2DC500CBF431 /* PasswordResetView.swift */; };
 		ECDC23C42AA8FB1C0072296D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C32AA8FB1C0072296D /* UserProfile.swift */; };
 		ECDC23C62AA8FD2B0072296D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */; };
 		ECDC23C82AAB88F10072296D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDC23C72AAB88F10072296D /* WebView.swift */; };
@@ -124,6 +125,7 @@
 		EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManagementView.swift; sourceTree = "<group>"; };
 		EC6108272AA8EEBD005E48B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC6108292AA8F3F9005E48B8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		ECD527902ADC2DC500CBF431 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
 		ECDC23C32AA8FB1C0072296D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		ECDC23C52AA8FD2B0072296D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ECDC23C72AAB88F10072296D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				EC6108232AA8EA39005E48B8 /* LoanDetailEditView.swift */,
 				EC6108252AA8EC23005E48B8 /* SubscriptionManagementView.swift */,
 				ECDC23C72AAB88F10072296D /* WebView.swift */,
+				ECD527902ADC2DC500CBF431 /* PasswordResetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				EC6108262AA8EC23005E48B8 /* SubscriptionManagementView.swift in Sources */,
 				ECDC23CE2AAB8CA20072296D /* AlphaVantageResponse.swift in Sources */,
 				EC0298522AA64C0E00EE2945 /* InvestmentManagementView.swift in Sources */,
+				ECD527912ADC2DC500CBF431 /* PasswordResetView.swift in Sources */,
 				EC0298562AA653B400EE2945 /* AlertsAndNotificationsView.swift in Sources */,
 				ECFD32DF2AA4F32B001B9E3B /* TransactionDetail.swift in Sources */,
 			);

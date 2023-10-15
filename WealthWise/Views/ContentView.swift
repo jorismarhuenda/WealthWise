@@ -16,7 +16,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                Image("logo") // Votre logo ici
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .foregroundColor(.blue)
+                    .padding(20)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.5)]), startPoint: .top, endPoint: .bottom))
+                            .shadow(radius: 10)
+                    )
                 
                 Text("Bienvenue sur WealthWise")
                     .font(.title)
@@ -24,63 +34,94 @@ struct ContentView: View {
                 
                 NavigationLink(destination: DashboardView()) {
                     Text("Tableau de Bord")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 
                 NavigationLink(destination: SecurityPrivacyView()) {
                     Text("Sécurité et Confidentialité")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 
                 NavigationLink(destination: SiriIntegrationView()) {
                     Text("Intégration de Siri")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 
                 NavigationLink(destination: FinancialEducationView()) {
                     Text("Éducation Financière")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 
-                NavigationLink(destination: AlertsAndNotificationsView(), isActive: $showingAlertsAndNotifications) {
-                                    EmptyView()
-                                }
-                                .frame(width: 0, height: 0)
-                                .opacity(0)
-
-                                Button(action: {
-                                    showingAlertsAndNotifications = true
-                                }) {
-                                    Text("Alertes et Notifications")
-                                        .frame(width: 200, height: 50)
-                                        .background(Color.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(10)
-                                }
+                Button(action: {
+                    showingAlertsAndNotifications = true
+                }) {
+                    Text("Alertes et Notifications")
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(10)
+                }
+                .sheet(isPresented: $showingAlertsAndNotifications) {
+                    AlertsAndNotificationsView()
+                }
                 
                 NavigationLink(destination: ProfileConfigurationView()) {
                     Text("Configuration du Profil")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 
                 Spacer()
             }
             .padding()
+            .background(
+                Color.white
+                    .edgesIgnoringSafeArea(.all)
+            )
             .navigationBarHidden(true)
         }
     }
