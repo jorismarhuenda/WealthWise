@@ -12,24 +12,24 @@ struct TransactionsView: View {
     @ObservedObject var transactionManager: TransactionManager
     @State private var showAddTransactionView = false
 
-    @EnvironmentObject var userProfileWrapper: UserProfileWrapper // Injectez-le ici
+    @EnvironmentObject var userProfileWrapper: UserProfileWrapper
 
     var body: some View {
         NavigationView {
-            VStack (spacing: 20) {
-                Text("Transactions")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-
+            VStack(spacing: 20) {
                 Button(action: {
                     showAddTransactionView = true
                 }) {
                     Text("Ajouter une transaction")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(10)
                 }
                 .sheet(isPresented: $showAddTransactionView) {
                     AddTransactionView(transactionManager: transactionManager, userID: userProfileWrapper.userProfile.id)
@@ -37,6 +37,7 @@ struct TransactionsView: View {
 
                 TransactionListView(transactionManager: transactionManager)
             }
+            .padding()
             .navigationBarTitle("Transactions")
         }
     }
@@ -52,24 +53,40 @@ struct AddTransactionView: View {
     @State private var description = ""
     @State private var amount = ""
     @State private var date = Date()
-    
+
     @ObservedObject var transactionManager: TransactionManager
-    var userID: String // L'identifiant de l'utilisateur
-    
+    var userID: String
+
     var body: some View {
         Form {
-            TextField("Description", text: $description)
-            TextField("Montant", text: $amount)
-                .keyboardType(.decimalPad)
-            DatePicker("Date", selection: $date, displayedComponents: .date)
-            Button(action: {
-                if let amount = Double(amount) {
-                    let newTransaction = Transaction(id: UUID().uuidString, description: description, amount: amount, userID: userID, date: date) // Utilisez l'identifiant de l'utilisateur
-                    transactionManager.addTransaction(transaction: newTransaction)
+            Section(header: Text("Nouvelle Transaction")) {
+                TextField("Description", text: $description)
+                TextField("Montant", text: $amount)
+                    .keyboardType(.decimalPad)
+                DatePicker("Date", selection: $date, displayedComponents: .date)
+            }
+
+            Section {
+                Button(action: {
+                    if let amount = Double(amount) {
+                        let newTransaction = Transaction(id: UUID().uuidString, description: description, amount: amount, userID: userID, date: date)
+                        transactionManager.addTransaction(transaction: newTransaction)
+                    }
+                }) {
+                    Text("Ajouter Transaction")
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                                .shadow(radius: 5)
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(10)
                 }
-            }) {
-                Text("Ajouter Transaction")
             }
         }
+        .listStyle(GroupedListStyle())
+        .navigationBarTitle("Ajouter Transaction", displayMode: .inline)
     }
 }

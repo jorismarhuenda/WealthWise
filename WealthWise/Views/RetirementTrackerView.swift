@@ -19,42 +19,65 @@ struct RetirementTrackerView: View {
         NavigationView {
             VStack(spacing: 20) {
                 Text("Suivi de la Retraite")
-                    .font(.title)
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                    .padding(.top, 20)
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 20) {
                     Text("Informations de base sur la retraite")
                         .font(.headline)
+                        .foregroundColor(.blue)
                     
                     TextField("Âge actuel", text: $viewModel.currentAge)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
+                        .padding()
                     
                     TextField("Âge prévu de départ à la retraite", text: $viewModel.retirementAge)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
+                        .padding()
                     
                     Button(action: {
                         viewModel.saveRetirementInfo()
                     }) {
                         Text("Enregistrer")
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
                     }
+                    .padding(.horizontal)
                 }
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 15).fill(Color.white).shadow(radius: 5))
                 
                 if let retirementInfo = viewModel.retirementInfo {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 20) {
                         Text("Récapitulatif des informations de retraite")
                             .font(.headline)
+                            .foregroundColor(.blue)
                         
                         Text("Âge actuel : \(retirementInfo.currentAge)")
                         Text("Âge prévu de départ à la retraite : \(retirementInfo.retirementAge)")
                     }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 15).fill(Color.white).shadow(radius: 5))
                 }
                 
                 NavigationLink(destination: RetirementPlanningCalculator()) {
                     Text("Calculateur de Planification de Retraite")
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
                         .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
                         .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
                 }
+                .padding()
                 
                 Spacer()
             }
@@ -64,10 +87,10 @@ struct RetirementTrackerView: View {
                 viewModel.getRetirementInfo()
             }
             .sheet(isPresented: $isPlanningRetirement) {
-                // Affiche la vue de planification de la retraite en tant que feuille modale
                 RetirementPlanningView()
             }
         }
+        .background(Color.gray.opacity(0.1).ignoresSafeArea())
     }
 }
 

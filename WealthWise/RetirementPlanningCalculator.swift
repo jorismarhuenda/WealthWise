@@ -19,48 +19,30 @@ struct RetirementPlanningCalculator: View {
     
     var body: some View {
         VStack {
-            Text("Calculateur de Planification de Retraite")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
             
-            TextField("Âge actuel", text: $currentAge)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            InputField(title: "Âge actuel", text: $currentAge)
+            InputField(title: "Âge de la retraite prévu", text: $retirementAge)
+            InputField(title: "Revenu actuel", text: $currentIncome)
+            InputField(title: "Épargne-retraite existante", text: $currentSavings)
             
-            TextField("Âge de la retraite prévu", text: $retirementAge)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Slider(value: $expectedReturn, in: 0...10, step: 0.5)
                 .padding()
-            
-            TextField("Revenu actuel", text: $currentIncome)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            TextField("Épargne-retraite existante", text: $currentSavings)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Slider(value: $expectedReturn, in: 0...10, step: 0.5, minimumValueLabel: Text("0%"), maximumValueLabel: Text("10%")) {
-                Text("Taux de Rendement Attendu")
-            }
-            .padding()
             
             Button(action: calculateRetirement) {
                 Text("Calculer")
-                    .frame(width: 200, height: 50)
+                    .frame(maxWidth: .infinity, minHeight: 50)
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
             .padding()
             
-            // Affichage des résultats
-            Text("Épargne-retraite estimée: \(estimatedRetirementSavings)")
-                .padding()
+            ResultView(title: "Épargne-retraite estimée:", value: estimatedRetirementSavings)
+            ResultView(title: "Revenu de retraite estimé:", value: estimatedRetirementIncome)
             
-            Text("Revenu de retraite estimé: \(estimatedRetirementIncome)")
-                .padding()
+            Spacer()
         }
+        .padding()
         .navigationBarTitle("Calculateur de Planification de Retraite")
     }
     
@@ -84,5 +66,32 @@ struct RetirementPlanningCalculator: View {
 struct RetirementPlanningCalculator_Previews: PreviewProvider {
     static var previews: some View {
         RetirementPlanningCalculator()
+    }
+}
+
+struct InputField: View {
+    var title: String
+    @Binding var text: String
+    
+    var body: some View {
+        TextField(title, text: $text)
+            .padding()
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
+}
+
+struct ResultView: View {
+    var title: String
+    var value: String
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .font(.headline)
+            Spacer()
+            Text(value)
+                .font(.headline)
+        }
+        .padding()
     }
 }
