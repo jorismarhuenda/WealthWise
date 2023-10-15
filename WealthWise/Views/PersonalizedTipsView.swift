@@ -13,8 +13,6 @@ struct PersonalizedTipsView: View {
             Text("Conseils Personnalisés")
                 .font(.title)
             
-            // Ajoutez ici des éléments pour fournir des conseils financiers personnalisés
-            
             Spacer()
         }
         .padding()
