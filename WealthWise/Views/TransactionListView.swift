@@ -16,7 +16,7 @@ struct TransactionListView: View {
                 ForEach(transactionManager.transactions) { transaction in
                     VStack(alignment: .leading) {
                         Text(transaction.description)
-                        Text("$\(transaction.amount, specifier: "%.2f")")
+                        Text("€\(transaction.amount, specifier: "%.2f")")
                             .foregroundColor(transaction.amount < 0 ? .red : .green)
                     }
                 }

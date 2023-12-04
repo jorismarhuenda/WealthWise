@@ -12,7 +12,7 @@ import Firebase
 struct ContentView: View {
     @State private var showingAlertsAndNotifications = false
     @EnvironmentObject var userProfileWrapper: UserProfileWrapper
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -20,106 +20,100 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.white)
                     .padding(20)
                     .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.5)]), startPoint: .top, endPoint: .bottom))
-                            .shadow(radius: 10)
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom))
+                            .shadow(color: Color.blue.opacity(0.5), radius: 10, x: 0, y: 5)
                     )
-                
-                Text("Bienvenue sur WealthWise")
+
+                Text("Bienvenue sur WealthWise! 😊")
                     .font(.title)
                     .foregroundColor(.blue)
-                
+
                 NavigationLink(destination: DashboardView()) {
-                    Text("Tableau de Bord")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Explorez le Tableau de Bord 📊")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
-                
+
                 NavigationLink(destination: SecurityPrivacyView()) {
-                    Text("Sécurité et Confidentialité")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Découvrez la Sécurité et Confidentialité 🔐")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
-                
+
                 NavigationLink(destination: SiriIntegrationView()) {
-                    Text("Intégration de Siri")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Explorez l'Intégration de Siri 🗣️")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
-                
+
                 NavigationLink(destination: FinancialEducationView()) {
-                    Text("Éducation Financière")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Enrichissez-vous avec l'Éducation Financière 📚")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
-                
+
                 Button(action: {
                     showingAlertsAndNotifications = true
                 }) {
-                    Text("Alertes et Notifications")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Recevez des Alertes et Notifications 🚨")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
                 .sheet(isPresented: $showingAlertsAndNotifications) {
                     AlertsAndNotificationsView()
                 }
-                
+
                 NavigationLink(destination: ProfileConfigurationView()) {
-                    Text("Configuration du Profil")
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                    Text("Configurez votre Profil 🛠️")
+                        .frame(maxWidth: .infinity, minHeight: 60)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.9)]), startPoint: .leading, endPoint: .trailing))
                                 .shadow(radius: 5)
                         )
                         .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
+                        .padding(15)
                 }
-                
+
                 Spacer()
             }
             .padding()
             .background(
-                Color.white
+                LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
             )
             .navigationBarHidden(true)

@@ -10,7 +10,6 @@
 		10CD50ACCFF8C62D21AF4DA4 /* Pods_WealthWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E9DF1A9657383B4F10D14D /* Pods_WealthWise.framework */; };
 		2458FDB5236C50740F4B7718 /* Pods_WealthWiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34782AA3838938565D36C1B4 /* Pods_WealthWiseTests.framework */; };
 		5061E82A87CDFA726A811D95 /* Pods_WealthWise_WealthWiseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D375E6055F74E6D53BFBD59F /* Pods_WealthWise_WealthWiseUITests.framework */; };
-		EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */; };
 		EC0298392AA4F76000EE2945 /* IncomeExpenseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */; };
 		EC02983B2AA4F78300EE2945 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02983A2AA4F78300EE2945 /* Transaction.swift */; };
 		EC02983D2AA4F7A500EE2945 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */; };
@@ -99,7 +98,6 @@
 		926876715AA5556ABC486B86 /* Pods-WealthWiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WealthWiseTests.release.xcconfig"; path = "Target Support Files/Pods-WealthWiseTests/Pods-WealthWiseTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4E46FE0EEC95353F614FDF0 /* Pods-WealthWise-WealthWiseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WealthWise-WealthWiseUITests.debug.xcconfig"; path = "Target Support Files/Pods-WealthWise-WealthWiseUITests/Pods-WealthWise-WealthWiseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D375E6055F74E6D53BFBD59F /* Pods_WealthWise_WealthWiseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WealthWise_WealthWiseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialReportView.swift; sourceTree = "<group>"; };
 		EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeExpenseSummaryView.swift; sourceTree = "<group>"; };
 		EC02983A2AA4F78300EE2945 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 				ECFD32D62AA4DE52001B9E3B /* InvestmentPortfolioView.swift */,
 				ECFD32DA2AA4DE74001B9E3B /* MarketNewsAndUpdatesView.swift */,
 				ECFD32DC2AA4F2E9001B9E3B /* TransactionDetailView.swift */,
-				EC0298362AA4F6E600EE2945 /* FinancialReportView.swift */,
 				EC0298382AA4F76000EE2945 /* IncomeExpenseSummaryView.swift */,
 				EC02983C2AA4F7A500EE2945 /* TransactionListView.swift */,
 				EC0298402AA4F7D900EE2945 /* NetWorthChartView.swift */,
@@ -599,7 +596,6 @@
 				ECFD32D92AA4DE63001B9E3B /* RetirementPlanningCalculator.swift in Sources */,
 				EC61081C2AA79448005E48B8 /* TaxTrackingView.swift in Sources */,
 				EC6108222AA8E9D8005E48B8 /* LoanManagementView.swift in Sources */,
-				EC0298372AA4F6E600EE2945 /* FinancialReportView.swift in Sources */,
 				ECFD32C32AA4D6F8001B9E3B /* ExpenseTrackerView.swift in Sources */,
 				ECDC23D82AACD7C80072296D /* UserProfileWrapper.swift in Sources */,
 				ECDC23C82AAB88F10072296D /* WebView.swift in Sources */,

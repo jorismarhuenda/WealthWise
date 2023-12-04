@@ -55,11 +55,6 @@ struct BudgetPlanningView: View {
                 }
             }
             
-            NavigationLink(destination: FinancialReportView(transactionManager: transactionManager)) {
-                Text("Voir le Rapport Financier")
-                    .foregroundColor(.blue)
-            }
-            
             NavigationLink(destination: BillManagementView(bills: $bills)) {
                 Text("Gestion des Factures")
                     .frame(width: 200, height: 50)
