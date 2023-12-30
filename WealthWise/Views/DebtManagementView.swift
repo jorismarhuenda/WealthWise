@@ -14,29 +14,35 @@ struct DebtManagementView: View {
     @State private var isAddingDebt = false
     @State private var newDebtName = ""
     @State private var newDebtAmount = ""
-    
+
     var body: some View {
-        VStack {
-            List {
-                ForEach(debts, id: \.id) { debt in
-                    NavigationLink(destination: DebtDetailView(debt: debt)) {
-                        Text(debt.name)
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(debts, id: \.id) { debt in
+                        NavigationLink(destination: DebtDetailView(debt: debt)) {
+                            Text(debt.name)
+                        }
                     }
+                    .onDelete(perform: deleteDebt)
                 }
-                .onDelete(perform: deleteDebt)
+                .navigationBarTitle("Gestion de Dettes")
+                .navigationBarItems(trailing: Button(action: {
+                    isAddingDebt = true
+                }) {
+                    Image(systemName: "plus")
+                })
             }
-            .navigationBarTitle("Gestion de Dettes")
-            .navigationBarItems(trailing: Button(action: {
-                isAddingDebt = true
-            }) {
-                Image(systemName: "plus")
-            })
-        }
-        .sheet(isPresented: $isAddingDebt) {
-            AddDebtView(debts: $debts, isAddingDebt: $isAddingDebt, newDebtName: $newDebtName, newDebtAmount: $newDebtAmount)
-        }
-        .onAppear {
-            fetchDebts()
+            .sheet(isPresented: $isAddingDebt) {
+                AddDebtView(debts: $debts, isAddingDebt: $isAddingDebt, newDebtName: $newDebtName, newDebtAmount: $newDebtAmount)
+            }
+            .onAppear {
+                fetchDebts()
+            }
+            .onReceive(debts.publisher) { _ in
+                // Force la mise à jour de la vue lorsqu'il y a des changements dans la liste debts
+                self.fetchDebts()
+            }
         }
     }
 
@@ -44,7 +50,7 @@ struct DebtManagementView: View {
         // Vérifier si l'utilisateur est authentifié
         if let user = Auth.auth().currentUser {
             let userId = user.uid
-            
+
             // Accéder à la collection "debts" dans Firestore
             let db = Firestore.firestore()
             db.collection("users").document(userId).collection("debts").getDocuments { (querySnapshot, error) in
@@ -52,18 +58,20 @@ struct DebtManagementView: View {
                     print("Erreur lors de la récupération des dettes: \(error?.localizedDescription ?? "Erreur inconnue")")
                     return
                 }
-                
+
                 // Mettre à jour la liste locale avec les nouvelles données
-                debts = documents.compactMap { queryDocumentSnapshot -> Debt? in
-                    let data = queryDocumentSnapshot.data()
-                    guard let id = data["id"] as? String,
-                          let name = data["name"] as? String,
-                          let amount = data["amount"] as? Double,
-                          let userId = data["userId"] as? String,
-                          userId == user.uid else {
-                        return nil // Ignorer les dettes qui ne correspondent pas à l'utilisateur actuel
+                DispatchQueue.main.async {
+                    debts = documents.compactMap { queryDocumentSnapshot -> Debt? in
+                        let data = queryDocumentSnapshot.data()
+                        guard let id = queryDocumentSnapshot.documentID as? String,
+                              let name = data["name"] as? String,
+                              let amount = data["amount"] as? Double,
+                              let userId = data["userId"] as? String,
+                              userId == user.uid else {
+                            return nil // Ignorer les dettes qui ne correspondent pas à l'utilisateur actuel
+                        }
+                        return Debt(id: id, name: name, amount: amount, userId: userId)
                     }
-                    return Debt(id: id, name: name, amount: amount)
                 }
             }
         }
@@ -81,19 +89,39 @@ struct DebtManagementView: View {
 
         let debtsToDelete = offsets.map { debts[$0] } // Obtenez la liste des dettes à supprimer
 
+        let dispatchGroup = DispatchGroup()
+
         for debtToDelete in debtsToDelete {
-            debtsRef
-                .document(debtToDelete.id)
-                .delete { error in
-                    if let error = error {
-                        print("Erreur lors de la suppression de la dette dans Firestore: \(error.localizedDescription)")
-                    } else {
-                        // La dette a été supprimée avec succès
-                        if let index = self.debts.firstIndex(where: { $0.id == debtToDelete.id }) {
-                            self.debts.remove(at: index)
-                        }
-                    }
+            dispatchGroup.enter()
+
+            let debtDocRef = debtsRef.document(debtToDelete.id)
+
+            print("Avant suppression sur Firebase - Dette ID: \(debtToDelete.id)")
+
+            debtDocRef.delete { error in
+                if let error = error {
+                    print("Erreur lors de la suppression de la dette dans Firestore: \(error.localizedDescription)")
+                } else {
+                    // La dette a été supprimée avec succès
+                    print("Dette supprimée avec succès: \(debtToDelete.name)")
                 }
+                dispatchGroup.leave()
+            }
+
+            print("Après suppression sur Firebase - Dette ID: \(debtToDelete.id)")
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            // Toutes les suppressions sur Firebase sont terminées, maintenant supprimons les dettes localement
+            for debtToDelete in debtsToDelete {
+                if let index = self.debts.firstIndex(where: { $0.id == debtToDelete.id }) {
+                    self.debts.remove(at: index)
+                    print("Dette supprimée localement: \(debtToDelete.name)")
+                } else {
+                    print("Impossible de trouver la dette localement: \(debtToDelete.name)")
+                }
+            }
+            print("Toutes les suppressions sont terminées")
         }
     }
 }
@@ -102,12 +130,13 @@ struct Debt: Identifiable {
     let id: String
     let name: String
     let amount: Double
+    let userId: String
     var isDeleted: Bool = false
 }
 
 struct DebtDetailView: View {
     let debt: Debt
-    
+
     var body: some View {
         VStack {
             Text("Nom de la dette : \(debt.name)")
@@ -123,7 +152,7 @@ struct AddDebtView: View {
     @Binding var isAddingDebt: Bool
     @Binding var newDebtName: String
     @Binding var newDebtAmount: String
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -132,7 +161,7 @@ struct AddDebtView: View {
                     TextField("Montant de la dette", text: $newDebtAmount)
                         .keyboardType(.numberPad)
                 }
-                
+
                 Button(action: {
                     if let amount = Double(newDebtAmount) {
                         saveDebtToFirestore(name: newDebtName, amount: amount)
@@ -149,21 +178,19 @@ struct AddDebtView: View {
     func saveDebtToFirestore(name: String, amount: Double) {
         if let user = Auth.auth().currentUser {
             let userId = user.uid
-            
+
             let db = Firestore.firestore()
             let debtData: [String: Any] = [
-                "id": UUID().uuidString,
                 "name": name,
                 "amount": amount,
                 "userId": userId
             ]
-            
+
             db.collection("users").document(userId).collection("debts").addDocument(data: debtData) { error in
                 if let error = error {
                     print("Erreur lors de l'ajout de la dette: \(error.localizedDescription)")
                 } else {
-                    let newDebt = Debt(id: debtData["id"] as! String, name: name, amount: amount)
-                    debts.append(newDebt)
+                    print("Dette ajoutée avec succès à Firebase: \(name)")
                 }
             }
         }

@@ -106,7 +106,7 @@ struct WealthSummaryView: View {
                           userId == user.uid else {
                         return nil // Ignorer les dettes qui ne correspondent pas à l'utilisateur actuel
                     }
-                    return Debt(id: id, name: name, amount: amount)
+                    return Debt(id: id, name: name, amount: amount, userId: userId)
                 }
             }
         }
