@@ -128,7 +128,7 @@ struct WealthSummaryView: View {
                         if let data = document.data() as? [String: Any],
                            let name = data["name"] as? String,
                            let amount = data["amount"] as? Double {
-                            return Bill(name: name, amount: amount, userID: user.uid)
+                            return Bill(id: document.documentID, name: name, amount: amount, userID: user.uid)
                         }
                         return nil
                     }

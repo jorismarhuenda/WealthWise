@@ -68,7 +68,7 @@ struct BillManagementView: View {
                         if let data = document.data() as? [String: Any],
                            let name = data["name"] as? String,
                            let amount = data["amount"] as? Double {
-                            return Bill(name: name, amount: amount, userID: user.uid)
+                            return Bill(id: document.documentID, name: name, amount: amount, userID: user.uid)
                         }
                         return nil
                     }
@@ -76,7 +76,6 @@ struct BillManagementView: View {
             }
     }
     
-    // Fonction pour ajouter une nouvelle facture
     func addBill() {
         guard let amount = Double(newBillAmount), !newBillName.isEmpty else {
             return
@@ -86,19 +85,21 @@ struct BillManagementView: View {
             return // L'utilisateur n'est pas connecté, gestion de l'erreur
         }
         
-        let newBill = Bill(name: newBillName, amount: amount, userID: user.uid)
-        
         // Enregistrez la facture dans Firebase
         let db = Firestore.firestore()
-        db.collection("bills").addDocument(data: [
-            "name": newBill.name,
-            "amount": newBill.amount,
-            "userID": newBill.userID
+        let newBillRef = db.collection("bills").document()
+        
+        newBillRef.setData([
+            "id": newBillRef.documentID, // Utilisez l'ID généré par Firestore
+            "name": newBillName,
+            "amount": amount,
+            "userID": user.uid
         ]) { error in
             if let error = error {
                 print("Erreur lors de l'enregistrement de la facture : \(error)")
             } else {
-                // Ajoutez la facture localement
+                // Ajoutez la facture localement avec l'ID Firebase
+                let newBill = Bill(id: newBillRef.documentID, name: newBillName, amount: amount, userID: user.uid)
                 bills.append(newBill)
                 
                 // Réinitialiser les champs de saisie
@@ -122,7 +123,7 @@ struct BillManagementView: View {
         let billToDelete = bills[offsets.first!] // Obtenez la facture à supprimer
         
         billsRef
-            .document(billToDelete.id.uuidString)
+            .document(String(billToDelete.id)) // Utilisez directement l'ID
             .delete { error in
                 if let error = error {
                     print("Erreur lors de la suppression de la facture : \(error.localizedDescription)")
@@ -137,8 +138,8 @@ struct BillManagementView: View {
 struct BillManagementView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleBills: [Bill] = [
-            Bill(name: "Facture 1", amount: 100.0, userID: ""),
-            Bill(name: "Facture 2", amount: 200.0, userID: "")
+            Bill(id: "", name: "Facture 1", amount: 100.0, userID: ""),
+            Bill(id: "", name: "Facture 2", amount: 200.0, userID: "")
         ]
         
         return BillManagementView(bills: .constant(sampleBills))
@@ -146,8 +147,15 @@ struct BillManagementView_Previews: PreviewProvider {
 }
 
 struct Bill: Identifiable {
-    let id = UUID()
+    var id: String // Utilisez String comme type d'ID
     let name: String
     let amount: Double
-    let userID: String // Ajoutez l'ID de l'utilisateur
+    let userID: String
+    
+    init(id: String, name: String, amount: Double, userID: String) {
+        self.id = id
+        self.name = name
+        self.amount = amount
+        self.userID = userID
+    }
 }
