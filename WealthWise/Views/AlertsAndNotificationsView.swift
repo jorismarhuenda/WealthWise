@@ -14,20 +14,53 @@ struct AlertsAndNotificationsView: View {
     @AppStorage("InvestmentNewsAlert") private var investmentNewsAlert = false
 
     var body: some View {
-        Form {
-            Section(header: Text("Alertes de Budget")) {
-                Toggle("Alerte quotidienne de dépassement de budget", isOn: $dailyBudgetAlert)
-            }
+        VStack(spacing: 20) {
+            Text("Alertes et Notifications")
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundColor(.blue)
+                .padding(.top, 20)
 
-            Section(header: Text("Alertes de Dépenses")) {
-                Toggle("Alerte mensuelle de dépenses élevées", isOn: $monthlyExpenseAlert)
-            }
+            Form {
+                Section(header: Text("Alertes de Budget").font(.headline).foregroundColor(.blue)) {
+                    Toggle("Alerte quotidienne de dépassement de budget", isOn: $dailyBudgetAlert)
+                }
+                .listRowBackground(Color.white)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                )
 
-            Section(header: Text("Alertes d'Investissement")) {
-                Toggle("Alerte des actualités d'investissement", isOn: $investmentNewsAlert)
+                Section(header: Text("Alertes de Dépenses").font(.headline).foregroundColor(.blue)) {
+                    Toggle("Alerte mensuelle de dépenses élevées", isOn: $monthlyExpenseAlert)
+                }
+                .listRowBackground(Color.white)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                )
+
+                Section(header: Text("Alertes d'Investissement").font(.headline).foregroundColor(.blue)) {
+                    Toggle("Alerte des actualités d'investissement", isOn: $investmentNewsAlert)
+                }
+                .listRowBackground(Color.white)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                )
             }
+            .listStyle(GroupedListStyle())
+            .padding(.horizontal)
         }
-        .navigationBarTitle("Alertes et Notifications")
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.gray.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
         .onAppear {
             requestNotificationAuthorization()
         }

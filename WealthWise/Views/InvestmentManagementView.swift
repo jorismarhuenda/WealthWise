@@ -19,50 +19,78 @@ struct InvestmentManagementView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Gestion des Investissements")
-                .font(.title)
-                .padding()
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundColor(.blue)
+                .padding(.top, 20)
 
             List {
                 ForEach(investments) { investment in
-                    InvestmentRowView(investment: investment)
+                    InvestmentCardView(investment: investment)
+                        .padding(.vertical, 5)
                 }
                 .onDelete(perform: deleteInvestment)
             }
+            .listStyle(PlainListStyle())
 
-            HStack {
+            VStack(spacing: 15) {
                 TextField("Nom de l'investissement", text: $newInvestmentName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
 
                 TextField("Quantité", text: $newInvestmentQuantity)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numberPad)
                     .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
 
                 TextField("Prix par unité", text: $newInvestmentPrice)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.decimalPad)
                     .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
 
                 Button(action: addInvestment) {
                     Text("Ajouter")
-                        .padding()
-                        .background(Color.blue)
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
                 }
             }
             .padding()
+            
+            NavigationLink(destination: InvestmentPortfolioView(investments: investments)) {
+                Text("Voir le Portfolio")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .padding(.horizontal)
+            }
         }
-        NavigationLink(destination: InvestmentPortfolioView(investments: investments)) {
-                            Text("Voir le Portfolio")
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
+        .padding()
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.gray.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
         .onAppear(perform: fetchInvestments)
     }
 
@@ -70,17 +98,12 @@ struct InvestmentManagementView: View {
         guard let currentUserID = currentUserID,
               let quantity = Int(newInvestmentQuantity),
               let price = Double(newInvestmentPrice) else {
-            // L'utilisateur n'est pas connecté ou les données sont invalides
             return
         }
 
         let newInvestment = Investment(id: UUID().uuidString, name: newInvestmentName, quantity: quantity, pricePerUnit: price, userId: currentUserID)
-
-        // Créer une référence à la collection "investments" dans Firestore
         let db = Firestore.firestore()
         let investmentsRef = db.collection("investments")
-
-        // Créer un document pour l'investissement
         let investmentData: [String: Any] = [
             "name": newInvestment.name,
             "quantity": newInvestment.quantity,
@@ -92,8 +115,7 @@ struct InvestmentManagementView: View {
             if let error = error {
                 print("Erreur lors de l'ajout de l'investissement : \(error.localizedDescription)")
             } else {
-                // L'investissement a été ajouté avec succès
-                fetchInvestments() // Mettre à jour la liste des investissements après l'ajout
+                fetchInvestments()
                 newInvestmentName = ""
                 newInvestmentQuantity = ""
                 newInvestmentPrice = ""
@@ -103,21 +125,18 @@ struct InvestmentManagementView: View {
 
     func fetchInvestments() {
         guard let currentUserID = currentUserID else {
-            // L'utilisateur n'est pas connecté
             return
         }
 
-        // Récupérer les investissements liés à l'utilisateur actuellement connecté depuis Firestore
         let db = Firestore.firestore()
         let investmentsRef = db.collection("investments")
 
         investmentsRef
-            .whereField("userId", isEqualTo: currentUserID) // Filtrer par l'ID de l'utilisateur actuel
+            .whereField("userId", isEqualTo: currentUserID)
             .getDocuments { querySnapshot, error in
                 if let error = error {
                     print("Erreur lors de la récupération des investissements : \(error.localizedDescription)")
                 } else if let documents = querySnapshot?.documents {
-                    // Convertir les documents Firestore en objets Investment
                     let investments: [Investment] = documents.compactMap { document in
                         let data = document.data()
                         if let name = data["name"] as? String,
@@ -125,7 +144,7 @@ struct InvestmentManagementView: View {
                            let pricePerUnit = data["pricePerUnit"] as? Double {
                             return Investment(id: document.documentID, name: name, quantity: quantity, pricePerUnit: pricePerUnit, userId: currentUserID)
                         } else {
-                            return nil // Retourner nil si les valeurs ne sont pas valides
+                            return nil
                         }
                     }
                     self.investments = investments
@@ -134,43 +153,27 @@ struct InvestmentManagementView: View {
     }
 
     func deleteInvestment(at offsets: IndexSet) {
-            guard let currentUserID = currentUserID else {
-                // L'utilisateur n'est pas connecté
-                return
-            }
+        guard let currentUserID = currentUserID else {
+            return
+        }
 
-            // Supprimer l'investissement à partir de Firestore
-            let db = Firestore.firestore()
-            let investmentsRef = db.collection("investments")
+        let db = Firestore.firestore()
+        let investmentsRef = db.collection("investments")
 
-            let investmentsToDelete = offsets.map { investments[$0] } // Obtenez la liste des investissements à supprimer
+        let investmentsToDelete = offsets.map { investments[$0] }
 
-            for investmentToDelete in investmentsToDelete {
-                investmentsRef
-                    .document(investmentToDelete.id)
-                    .delete { error in
-                        if let error = error {
-                            print("Erreur lors de la suppression de l'investissement : \(error.localizedDescription)")
-                        } else {
-                            // L'investissement a été supprimé avec succès
-                            if let index = self.investments.firstIndex(where: { $0.id == investmentToDelete.id }) {
-                                self.investments.remove(at: index)
-                            }
+        for investmentToDelete in investmentsToDelete {
+            investmentsRef
+                .document(investmentToDelete.id)
+                .delete { error in
+                    if let error = error {
+                        print("Erreur lors de la suppression de l'investissement : \(error.localizedDescription)")
+                    } else {
+                        if let index = self.investments.firstIndex(where: { $0.id == investmentToDelete.id }) {
+                            self.investments.remove(at: index)
                         }
                     }
-            }
-        }
-}
-
-struct InvestmentRowView: View {
-    let investment: Investment
-
-    var body: some View {
-        HStack {
-            Text(investment.name)
-            Spacer()
-            Text("\(investment.quantity) actions")
-            Text("\(investment.totalValue, specifier: "%.2f") €")
+                }
         }
     }
 }

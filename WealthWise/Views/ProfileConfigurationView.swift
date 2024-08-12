@@ -16,55 +16,106 @@ struct ProfileConfigurationView: View {
 
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Informations de profil")) {
-                    TextField("Nom d'utilisateur", text: $profileViewModel.userProfile.username)
-                    TextField("Adresse e-mail", text: $profileViewModel.userProfile.email)
-                    TextField("Numéro de téléphone", text: $profileViewModel.userProfile.phoneNumber)
-                    Picker("Pays", selection: $profileViewModel.userProfile.selectedCountry) {
-                        Text("Sélectionner un pays").tag("Sélectionner un pays")
-                        Text("États-Unis").tag("États-Unis")
-                        Text("Canada").tag("Canada")
-                        Text("France").tag("France")
-                        // Ajoutez d'autres pays si nécessaire
-                    }
-                    .pickerStyle(DefaultPickerStyle())
-                }
+            VStack(spacing: 20) {
+                Text("Configuration du Profil")
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                    .foregroundColor(.blue)
+                    .padding(.top, 20)
 
-                Section(header: Text("Préférences")) {
-                    Toggle("Activer les notifications", isOn: $profileViewModel.userProfile.isNotificationsEnabled)
-                }
-
-                Section {
-                    Button(action: {
-                        // Enregistrez les modifications du profil sur Firebase
-                        profileViewModel.saveProfileToFirebase()
-                    }) {
-                        Text("Enregistrer les modifications")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                }
-
-                // Section pour activer ou désactiver l'utilisation de Face ID
-                Section {
-                    Toggle("Utiliser Face ID", isOn: $authenticationViewModel.useFaceID)
-                        .padding()
-
-                    Button(action: {
-                        authenticationViewModel.toggleFaceID()
-                    }) {
-                        Text(authenticationViewModel.useFaceID ? "Désactiver Face ID" : "Activer Face ID")
-                            .foregroundColor(.white)
+                Form {
+                    Section(header: Text("Informations de profil").font(.headline).foregroundColor(.blue)) {
+                        TextField("Nom d'utilisateur", text: $profileViewModel.userProfile.username)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.white)
                             .cornerRadius(10)
+                            .shadow(radius: 2)
+
+                        TextField("Adresse e-mail", text: $profileViewModel.userProfile.email)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 2)
+
+                        TextField("Numéro de téléphone", text: $profileViewModel.userProfile.phoneNumber)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 2)
+
+                        Picker("Pays", selection: $profileViewModel.userProfile.selectedCountry) {
+                            Text("Sélectionner un pays").tag("Sélectionner un pays")
+                            Text("États-Unis").tag("États-Unis")
+                            Text("Canada").tag("Canada")
+                            Text("France").tag("France")
+                        }
+                        .pickerStyle(DefaultPickerStyle())
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 2)
                     }
-                    .padding()
+                    .listRowBackground(Color.clear)
+
+                    Section(header: Text("Préférences").font(.headline).foregroundColor(.blue)) {
+                        Toggle("Activer les notifications", isOn: $profileViewModel.userProfile.isNotificationsEnabled)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 2)
+                    }
+                    .listRowBackground(Color.clear)
+
+                    Section {
+                        Button(action: {
+                            profileViewModel.saveProfileToFirebase()
+                            showAlert = true
+                        }) {
+                            Text("Enregistrer les modifications")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, minHeight: 50)
+                                .background(
+                                    LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                                )
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                        }
+                    }
+                    .listRowBackground(Color.clear)
+
+                    Section {
+                        Toggle("Utiliser Face ID", isOn: $authenticationViewModel.useFaceID)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 2)
+
+                        Button(action: {
+                            authenticationViewModel.toggleFaceID()
+                        }) {
+                            Text(authenticationViewModel.useFaceID ? "Désactiver Face ID" : "Activer Face ID")
+                                .font(.headline)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                                )
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                        }
+                        .padding(.top, 10)
+                    }
+                    .listRowBackground(Color.clear)
                 }
+                .listStyle(GroupedListStyle())
+                .padding(.horizontal)
             }
-            .navigationBarTitle("Configuration du Profil")
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.gray.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+            )
             .onAppear {
-                // Chargement des données de profil depuis Firebase lors de l'affichage de la vue
                 profileViewModel.loadProfileFromFirebase()
             }
             .alert(isPresented: $showAlert) {
