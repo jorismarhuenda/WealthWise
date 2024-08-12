@@ -24,7 +24,7 @@ struct LoginView: View {
     @State private var isPasswordSpecialCharValid = false
 
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Image("logo")
                 .resizable()
                 .scaledToFit()
@@ -32,33 +32,33 @@ struct LoginView: View {
                 .padding(.bottom, 20)
 
             Text(isRegistering ? "Inscription" : "Connexion")
-                .font(.title)
+                .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundColor(.blue)
 
-            VStack(spacing: 10) {
+            VStack(spacing: 15) {
                 TextField("Adresse e-mail", text: $email)
                     .padding(15)
-                    .background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white).shadow(radius: 2))
 
                 SecureField("Mot de passe", text: $password)
                     .onChange(of: password, perform: { value in
-                        // Mettez à jour les critères du mot de passe à chaque modification
                         updatePasswordCriteria()
                     })
                     .padding(15)
-                    .background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white).shadow(radius: 2))
 
-                // Affichez la confirmation du mot de passe uniquement lors de l'inscription
                 if isRegistering {
                     SecureField("Confirmer le mot de passe", text: $confirmPassword)
                         .padding(15)
-                        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white).shadow(radius: 2))
 
-                    // Affichez les critères du mot de passe avec des couleurs dynamiques
-                    PasswordCriteriaView(label: "Minimum 8 caractères", isValid: isPasswordLengthValid)
-                    PasswordCriteriaView(label: "Au moins une majuscule", isValid: isPasswordUppercaseValid)
-                    PasswordCriteriaView(label: "Au moins un chiffre", isValid: isPasswordDigitValid)
-                    PasswordCriteriaView(label: "Au moins un caractère spécial", isValid: isPasswordSpecialCharValid)
+                    VStack(alignment: .leading, spacing: 5) {
+                        PasswordCriteriaView(label: "Minimum 8 caractères", isValid: isPasswordLengthValid)
+                        PasswordCriteriaView(label: "Au moins une majuscule", isValid: isPasswordUppercaseValid)
+                        PasswordCriteriaView(label: "Au moins un chiffre", isValid: isPasswordDigitValid)
+                        PasswordCriteriaView(label: "Au moins un caractère spécial", isValid: isPasswordSpecialCharValid)
+                    }
+                    .padding(.leading, 20)
                 }
             }
             .padding(.horizontal, 20)
@@ -69,50 +69,51 @@ struct LoginView: View {
                     .padding(.top, 10)
             }
 
-            HStack {
+            HStack(spacing: 15) {
                 Button(action: {
-                    authenticationError = nil // Réinitialisez l'erreur à nil
+                    authenticationError = nil
 
                     if isRegistering {
-                        // Inscription avec Firebase
                         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                             handleAuthenticationResult(authResult: authResult, error: error)
                         }
                     } else {
-                        // Connexion avec Firebase
                         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                             handleAuthenticationResult(authResult: authResult, error: error)
                         }
                     }
                 }) {
                     Text(isRegistering ? "S'inscrire" : "Se connecter")
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(Color.blue)
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        .padding(15)
+                        .shadow(radius: 5)
                 }
 
                 if !isRegistering {
                     Button(action: {
-                        // Ajoutez ici la logique pour la récupération du mot de passe
                         isPasswordResetShowing.toggle()
                     }) {
                         Text("Mot de passe oublié?")
+                            .font(.subheadline)
                             .foregroundColor(.blue)
-                            .padding(.top, 20)
                     }
                     .sheet(isPresented: $isPasswordResetShowing) {
-                        // Ajoutez ici la vue de récupération du mot de passe
                         PasswordResetView()
                     }
                 }
             }
+            .padding(.horizontal, 20)
 
             Button(action: {
                 isRegistering.toggle()
             }) {
                 Text(isRegistering ? "Déjà inscrit ? Connectez-vous" : "Nouvel utilisateur ? Inscrivez-vous")
+                    .font(.subheadline)
                     .foregroundColor(.blue)
                     .padding(.top, 20)
             }
@@ -120,24 +121,21 @@ struct LoginView: View {
             Spacer()
         }
         .padding()
-        .background(Color.white)
+        .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
         .cornerRadius(20)
         .shadow(radius: 5)
     }
 
     private func handleAuthenticationResult(authResult: AuthDataResult?, error: Error?) {
         if let error = error {
-            // Gérez l'erreur d'authentification ici
             authenticationError = error.localizedDescription
             print("Erreur d'authentification : \(error.localizedDescription)")
         } else {
-            // L'authentification a réussi, vous pouvez rediriger l'utilisateur vers le tableau de bord ou une autre vue principale
             isLoggedIn = true
         }
     }
 
     private func updatePasswordCriteria() {
-        // Mettez à jour les critères du mot de passe
         isPasswordLengthValid = password.count >= 8
         isPasswordUppercaseValid = password.rangeOfCharacter(from: .uppercaseLetters) != nil
         isPasswordDigitValid = password.rangeOfCharacter(from: .decimalDigits) != nil
@@ -155,6 +153,7 @@ struct PasswordCriteriaView: View {
                 .foregroundColor(isValid ? .green : .red)
             Text(label)
                 .foregroundColor(isValid ? .green : .red)
+                .font(.subheadline)
         }
     }
 }
