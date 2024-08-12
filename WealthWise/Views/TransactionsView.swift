@@ -16,30 +16,35 @@ struct TransactionsView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
+            VStack(spacing: 25) {
                 Button(action: {
                     showAddTransactionView = true
                 }) {
                     Text("Ajouter une transaction")
+                        .font(.headline)
                         .frame(maxWidth: .infinity, minHeight: 50)
                         .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
-                                .shadow(radius: 5)
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
                         )
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        .padding(10)
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
                 }
                 .sheet(isPresented: $showAddTransactionView) {
                     AddTransactionView(transactionManager: transactionManager, userID: userProfileWrapper.userProfile.id)
                 }
 
                 TransactionListView(transactionManager: transactionManager)
+                    .padding(.horizontal)
             }
-            .padding()
-            .navigationBarTitle("Transactions")
+            .padding(.top, 20)
+            .navigationBarTitle("Transactions", displayMode: .inline)
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.1), Color.gray.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 
@@ -58,35 +63,57 @@ struct AddTransactionView: View {
     var userID: String
 
     var body: some View {
-        Form {
-            Section(header: Text("Nouvelle Transaction")) {
-                TextField("Description", text: $description)
-                TextField("Montant", text: $amount)
-                    .keyboardType(.decimalPad)
-                DatePicker("Date", selection: $date, displayedComponents: .date)
-            }
+        NavigationView {
+            Form {
+                Section(header: Text("Nouvelle Transaction")
+                            .font(.headline)
+                            .foregroundColor(.blue)) {
+                    TextField("Description", text: $description)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
+                    
+                    TextField("Montant", text: $amount)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
+                    
+                    DatePicker("Date", selection: $date, displayedComponents: .date)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
+                }
 
-            Section {
-                Button(action: {
-                    if let amount = Double(amount) {
-                        let newTransaction = Transaction(id: UUID().uuidString, description: description, amount: amount, userID: userID, date: date)
-                        transactionManager.addTransaction(transaction: newTransaction)
+                Section {
+                    Button(action: {
+                        if let amount = Double(amount) {
+                            let newTransaction = Transaction(id: UUID().uuidString, description: description, amount: amount, userID: userID, date: date)
+                            transactionManager.addTransaction(transaction: newTransaction)
+                        }
+                    }) {
+                        Text("Ajouter Transaction")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, minHeight: 50)
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                            )
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .padding(.horizontal)
                     }
-                }) {
-                    Text("Ajouter Transaction")
-                        .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
-                                .shadow(radius: 5)
-                        )
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(10)
                 }
             }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("Ajouter Transaction", displayMode: .inline)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.gray.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+            )
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarTitle("Ajouter Transaction", displayMode: .inline)
     }
 }

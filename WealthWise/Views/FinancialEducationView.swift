@@ -20,16 +20,26 @@ struct FinancialEducationView: View {
     let apiKey = "e7d8feb132d94c2793de471ec17caa36"
 
     var body: some View {
-            List(articles) { article in
-                NavigationLink(destination: ArticleWebView(url: article.url)) {
-                    Text(article.title)
+        ScrollView {
+            VStack(spacing: 20) {
+                ForEach(articles) { article in
+                    NavigationLink(destination: ArticleWebView(url: article.url)) {
+                        ArticleCardView(article: article)
+                            .padding(.horizontal)
+                    }
                 }
             }
+            .padding(.top, 20)
             .onAppear {
                 fetchArticles()
             }
-            .navigationBarTitle("Éducation Financière")
+            .navigationBarTitle("Éducation Financière", displayMode: .inline)
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
+    }
 
     func fetchArticles() {
         AF.request("https://newsapi.org/v2/everything?q=finance&apiKey=\(apiKey)")
@@ -38,6 +48,31 @@ struct FinancialEducationView: View {
                     self.articles = articles
                 }
             }
+    }
+}
+
+struct ArticleCardView: View {
+    let article: Article
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(article.title)
+                .font(.headline)
+                .foregroundColor(.blue)
+                .multilineTextAlignment(.leading)
+            
+            Text(article.description)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .lineLimit(3)
+                .multilineTextAlignment(.leading)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+        )
     }
 }
 
@@ -50,6 +85,7 @@ struct ArticleWebView: View {
 
     var body: some View {
         WebView(urlString: url)
+            .navigationBarTitle("Article", displayMode: .inline)
     }
 }
 

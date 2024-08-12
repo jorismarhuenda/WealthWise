@@ -21,16 +21,20 @@ struct DebtManagementView: View {
                 List {
                     ForEach(debts, id: \.id) { debt in
                         NavigationLink(destination: DebtDetailView(debt: debt)) {
-                            Text(debt.name)
+                            DebtCardView(debt: debt)
+                                .padding(.vertical, 5)
                         }
                     }
                     .onDelete(perform: deleteDebt)
                 }
-                .navigationBarTitle("Gestion de Dettes")
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("Gestion de Dettes", displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
                     isAddingDebt = true
                 }) {
                     Image(systemName: "plus")
+                        .imageScale(.large)
+                        .foregroundColor(.blue)
                 })
             }
             .sheet(isPresented: $isAddingDebt) {
@@ -39,27 +43,18 @@ struct DebtManagementView: View {
             .onAppear {
                 fetchDebts()
             }
-            .onReceive(debts.publisher) { _ in
-                // Force la mise à jour de la vue lorsqu'il y a des changements dans la liste debts
-                self.fetchDebts()
-            }
         }
     }
 
     func fetchDebts() {
-        // Vérifier si l'utilisateur est authentifié
         if let user = Auth.auth().currentUser {
             let userId = user.uid
-
-            // Accéder à la collection "debts" dans Firestore
             let db = Firestore.firestore()
             db.collection("users").document(userId).collection("debts").getDocuments { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("Erreur lors de la récupération des dettes: \(error?.localizedDescription ?? "Erreur inconnue")")
                     return
                 }
-
-                // Mettre à jour la liste locale avec les nouvelles données
                 DispatchQueue.main.async {
                     debts = documents.compactMap { queryDocumentSnapshot -> Debt? in
                         let data = queryDocumentSnapshot.data()
@@ -68,7 +63,7 @@ struct DebtManagementView: View {
                               let amount = data["amount"] as? Double,
                               let userId = data["userId"] as? String,
                               userId == user.uid else {
-                            return nil // Ignorer les dettes qui ne correspondent pas à l'utilisateur actuel
+                            return nil
                         }
                         return Debt(id: id, name: name, amount: amount, userId: userId)
                     }
@@ -79,7 +74,6 @@ struct DebtManagementView: View {
 
     func deleteDebt(at offsets: IndexSet) {
         guard let user = Auth.auth().currentUser else {
-            // L'utilisateur n'est pas connecté
             return
         }
 
@@ -87,38 +81,29 @@ struct DebtManagementView: View {
         let db = Firestore.firestore()
         let debtsRef = db.collection("users").document(userId).collection("debts")
 
-        let debtsToDelete = offsets.map { debts[$0] } // Obtenez la liste des dettes à supprimer
+        let debtsToDelete = offsets.map { debts[$0] }
 
         let dispatchGroup = DispatchGroup()
 
         for debtToDelete in debtsToDelete {
             dispatchGroup.enter()
-
             let debtDocRef = debtsRef.document(debtToDelete.id)
-
-            print("Avant suppression sur Firebase - Dette ID: \(debtToDelete.id)")
 
             debtDocRef.delete { error in
                 if let error = error {
                     print("Erreur lors de la suppression de la dette dans Firestore: \(error.localizedDescription)")
                 } else {
-                    // La dette a été supprimée avec succès
                     print("Dette supprimée avec succès: \(debtToDelete.name)")
                 }
                 dispatchGroup.leave()
             }
-
-            print("Après suppression sur Firebase - Dette ID: \(debtToDelete.id)")
         }
 
         dispatchGroup.notify(queue: .main) {
-            // Toutes les suppressions sur Firebase sont terminées, maintenant supprimons les dettes localement
             for debtToDelete in debtsToDelete {
                 if let index = self.debts.firstIndex(where: { $0.id == debtToDelete.id }) {
                     self.debts.remove(at: index)
                     print("Dette supprimée localement: \(debtToDelete.name)")
-                } else {
-                    print("Impossible de trouver la dette localement: \(debtToDelete.name)")
                 }
             }
             print("Toutes les suppressions sont terminées")
@@ -131,19 +116,51 @@ struct Debt: Identifiable {
     let name: String
     let amount: Double
     let userId: String
-    var isDeleted: Bool = false
+}
+
+struct DebtCardView: View {
+    let debt: Debt
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(debt.name)
+                .font(.headline)
+                .foregroundColor(.blue)
+            Text("Montant: \(debt.amount, specifier: "%.2f") €")
+                .font(.subheadline)
+                .foregroundColor(.primary)
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+        )
+    }
 }
 
 struct DebtDetailView: View {
     let debt: Debt
 
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Nom de la dette : \(debt.name)")
-            Text("Montant de la dette : \(debt.amount)€")
-            // Ajoutez d'autres détails de la dette si nécessaire
+                .font(.title)
+                .foregroundColor(.blue)
+            
+            Text("Montant de la dette : \(debt.amount, specifier: "%.2f")€")
+                .font(.title2)
+                .foregroundColor(.primary)
+            
+            Spacer()
         }
-        .navigationBarTitle("Détails de la Dette")
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+        )
+        .navigationBarTitle("Détails de la Dette", displayMode: .inline)
     }
 }
 
@@ -156,10 +173,19 @@ struct AddDebtView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Nouvelle Dette")) {
+                Section(header: Text("Nouvelle Dette").font(.headline).foregroundColor(.blue)) {
                     TextField("Nom de la dette", text: $newDebtName)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
+                    
                     TextField("Montant de la dette", text: $newDebtAmount)
                         .keyboardType(.numberPad)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
                 }
 
                 Button(action: {
@@ -169,16 +195,28 @@ struct AddDebtView: View {
                     isAddingDebt = false
                 }) {
                     Text("Ajouter Dette")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing)
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .padding(.horizontal)
                 }
             }
-            .navigationBarTitle("Ajouter Dette")
+            .navigationBarTitle("Ajouter Dette", displayMode: .inline)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.gray.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+            )
         }
     }
 
     func saveDebtToFirestore(name: String, amount: Double) {
         if let user = Auth.auth().currentUser {
             let userId = user.uid
-
             let db = Firestore.firestore()
             let debtData: [String: Any] = [
                 "name": name,

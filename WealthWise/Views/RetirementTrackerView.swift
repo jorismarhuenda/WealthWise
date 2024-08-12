@@ -17,9 +17,9 @@ struct RetirementTrackerView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
+            VStack(spacing: 25) {
                 Text("Suivi de la Retraite")
-                    .font(.largeTitle)
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundColor(.blue)
                     .padding(.top, 20)
                 
@@ -32,20 +32,29 @@ struct RetirementTrackerView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                     
                     TextField("Âge prévu de départ à la retraite", text: $viewModel.retirementAge)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)
                         .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                     
                     Button(action: {
                         viewModel.saveRetirementInfo()
                     }) {
                         Text("Enregistrer")
+                            .font(.headline)
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.blue)
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.7)]), startPoint: .leading, endPoint: .trailing)
+                            )
                             .cornerRadius(10)
                             .shadow(radius: 5)
                     }
@@ -69,10 +78,13 @@ struct RetirementTrackerView: View {
                 
                 NavigationLink(destination: RetirementPlanningCalculator()) {
                     Text("Calculateur de Planification de Retraite")
+                        .font(.headline)
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.7)]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .cornerRadius(10)
                         .shadow(radius: 5)
                         .padding(.horizontal)
@@ -82,7 +94,7 @@ struct RetirementTrackerView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("Suivi de la Retraite")
+            .navigationBarTitle("Suivi de la Retraite", displayMode: .inline)
             .onAppear {
                 viewModel.getRetirementInfo()
             }
@@ -90,7 +102,10 @@ struct RetirementTrackerView: View {
                 RetirementPlanningView()
             }
         }
-        .background(Color.gray.opacity(0.1).ignoresSafeArea())
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.1), Color.gray.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 
@@ -114,42 +129,42 @@ class RetirementInfoViewModel: ObservableObject {
     }
     
     func getRetirementInfo() {
-            guard let userID = Auth.auth().currentUser?.uid else { return }
-            
-            let db = Firestore.firestore()
-            let retirementRef = db.collection("users").document(userID).collection("retirementInfo").document("userRetirementInfo")
-            
-            retirementRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let data = document.data()
-                    if let currentAge = data?["currentAge"] as? Int, let retirementAge = data?["retirementAge"] as? Int {
-                        DispatchQueue.main.async {
-                            self.currentAge = String(currentAge)
-                            self.retirementAge = String(retirementAge)
-                            self.retirementInfo = RetirementInfo(currentAge: currentAge, retirementAge: retirementAge)
-                        }
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        let db = Firestore.firestore()
+        let retirementRef = db.collection("users").document(userID).collection("retirementInfo").document("userRetirementInfo")
+        
+        retirementRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                if let currentAge = data?["currentAge"] as? Int, let retirementAge = data?["retirementAge"] as? Int {
+                    DispatchQueue.main.async {
+                        self.currentAge = String(currentAge)
+                        self.retirementAge = String(retirementAge)
+                        self.retirementInfo = RetirementInfo(currentAge: currentAge, retirementAge: retirementAge)
                     }
                 }
             }
         }
+    }
     
     func saveRetirementInfoToFirebase(_ retirementInfo: RetirementInfo) {
-            guard let userID = Auth.auth().currentUser?.uid else { return }
-            
-            let db = Firestore.firestore()
-            let retirementRef = db.collection("users").document(userID).collection("retirementInfo").document("userRetirementInfo")
-            
-            retirementRef.setData([
-                "currentAge": retirementInfo.currentAge,
-                "retirementAge": retirementInfo.retirementAge
-            ]) { error in
-                if let error = error {
-                    print("Erreur lors de l'enregistrement des informations de retraite : \(error.localizedDescription)")
-                } else {
-                    print("Informations de retraite enregistrées avec succès")
-                }
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        let db = Firestore.firestore()
+        let retirementRef = db.collection("users").document(userID).collection("retirementInfo").document("userRetirementInfo")
+        
+        retirementRef.setData([
+            "currentAge": retirementInfo.currentAge,
+            "retirementAge": retirementInfo.retirementAge
+        ]) { error in
+            if let error = error {
+                print("Erreur lors de l'enregistrement des informations de retraite : \(error.localizedDescription)")
+            } else {
+                print("Informations de retraite enregistrées avec succès")
             }
         }
+    }
 }
 
 struct RetirementInfo {

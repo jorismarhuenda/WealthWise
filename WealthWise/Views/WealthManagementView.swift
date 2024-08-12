@@ -11,7 +11,7 @@ struct WealthManagementView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 25) {
                 
                 NavigationLink(destination: WealthSummaryView()) {
                     WealthManagementItem(title: "Récapitulatif de Patrimoine", icon: "chart.pie.fill")
@@ -48,8 +48,12 @@ struct WealthManagementView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("Gestion de Patrimoine")
+            .navigationBarTitle("Gestion de Patrimoine", displayMode: .inline)
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue.opacity(0.1)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 
@@ -59,27 +63,31 @@ struct WealthManagementItem: View {
     
     var body: some View {
         HStack {
-            Image(systemName: icon)
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(.white)
-                .padding(8)
+            ZStack {
+                Circle()
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.7)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .frame(width: 50, height: 50)
+                    .shadow(color: Color.blue.opacity(0.4), radius: 5, x: 0, y: 5)
+                
+                Image(systemName: icon)
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 25, height: 25)
+            }
             
             Text(title)
-                .font(.headline)
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
+                .font(.system(size: 18, weight: .semibold, design: .rounded))
+                .foregroundColor(.blue)
             
             Spacer()
         }
         .padding()
         .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.blue.opacity(0.8)]), startPoint: .leading, endPoint: .trailing))
-                .shadow(radius: 5)
+            VisualEffectBlur(blurStyle: .systemMaterial)
+                .cornerRadius(15)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
-        .foregroundColor(.white)
-        .cornerRadius(10)
+        .padding(.horizontal)
     }
 }
 

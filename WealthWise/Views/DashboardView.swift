@@ -13,7 +13,7 @@ struct DashboardView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 20) {
+            LazyVStack(spacing: 25) {
                 NavigationLink(destination: BudgetPlanningView(transactionManager: transactionManager)) {
                     DashboardListItem(title: "Planification Budgétaire", image: "chart.pie.fill")
                 }
@@ -40,8 +40,8 @@ struct DashboardView: View {
             }
             .padding()
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarTitle("Tableau de Bord")
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.1), Color.blue.opacity(0.3)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all))
+        .navigationBarTitle("Tableau de Bord", displayMode: .inline)
     }
 }
 
@@ -53,22 +53,46 @@ struct DashboardListItem: View {
         HStack {
             Image(systemName: image)
                 .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(Color.blue)
+                .frame(width: 35, height: 35)
+                .foregroundColor(.white)
+                .padding()
+                .background(
+                    Circle()
+                        .fill(Color.blue.opacity(0.6))
+                        .shadow(radius: 5)
+                )
             
             Text(title)
-                .font(.headline)
+                .font(.system(size: 18, weight: .medium, design: .rounded))
+                .foregroundColor(.blue)
             
             Spacer()
+            
+            Image(systemName: "chevron.right")
+                .foregroundColor(.blue)
         }
         .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 5)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.blue, lineWidth: 1)
+        .background(
+            VisualEffectBlur(blurStyle: .systemMaterial)
+                .cornerRadius(15)
+                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
         )
+        .overlay(
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(Color.blue.opacity(0.7), lineWidth: 1)
+        )
+    }
+}
+
+struct VisualEffectBlur: UIViewRepresentable {
+    var blurStyle: UIBlurEffect.Style
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+    }
+
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: blurStyle)
     }
 }
 

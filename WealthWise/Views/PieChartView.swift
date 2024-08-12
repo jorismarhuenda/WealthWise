@@ -18,11 +18,20 @@ struct PieChartView: View {
                     let endAngle: Angle = self.endAngle(for: index)
 
                     PieSlice(startAngle: startAngle, endAngle: endAngle, dataPoint: dataPoints[index])
-                        .foregroundColor(self.sliceColor(index: index))
-                        .overlay(PieSliceLabel(dataPoint: dataPoints[index], startAngle: startAngle, endAngle: endAngle))
+                        .fill(self.sliceColor(index: index))
+                        .overlay(
+                            PieSliceLabel(dataPoint: dataPoints[index], startAngle: startAngle, endAngle: endAngle)
+                                .foregroundColor(.white)
+                        )
+                        .shadow(radius: 5)
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.width) // Ajustez la taille du graphique ici
+            .frame(width: geometry.size.width, height: geometry.size.width)
+            .background(
+                Circle()
+                    .fill(Color.white)
+                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+            )
         }
     }
 
@@ -32,9 +41,9 @@ struct PieChartView: View {
         }
 
         let total = dataPoints.reduce(0) { $0 + $1.amount }
-        let normalizedValue = dataPoints[index].amount / total
+        let startDegree = dataPoints.prefix(index).reduce(0) { $0 + $1.amount } / total
 
-        return .degrees(360 * normalizedValue)
+        return .degrees(360 * startDegree)
     }
 
     private func endAngle(for index: Int) -> Angle {
@@ -43,14 +52,14 @@ struct PieChartView: View {
         }
 
         let total = dataPoints.reduce(0) { $0 + $1.amount }
-        let normalizedValue = dataPoints[index].amount / total
+        let endDegree = dataPoints.prefix(index + 1).reduce(0) { $0 + $1.amount } / total
 
-        return .degrees(360 * normalizedValue + startAngle(for: index).degrees)
+        return .degrees(360 * endDegree)
     }
 
     private func sliceColor(index: Int) -> Color {
-        // Vous pouvez personnaliser les couleurs des tranches ici en fonction de l'index
-        let colors: [Color] = [.blue, .green, .orange, .red, .purple]
+        // Palette de couleurs modernisée
+        let colors: [Color] = [.blue, .green, .orange, .purple, .pink, .yellow]
         return colors[index % colors.count]
     }
 }
@@ -87,18 +96,23 @@ struct PieSliceLabel: View {
     var body: some View {
         VStack {
             Text(dataPoint.name)
-                .font(.headline)
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .shadow(radius: 1)
             Text("$\(dataPoint.amount, specifier: "%.2f")")
-                .font(.subheadline)
+                .font(.system(size: 12, weight: .regular, design: .rounded))
+                .shadow(radius: 1)
         }
+        .padding(5)
+        .background(Color.black.opacity(0.5))
+        .cornerRadius(5)
         .offset(sliceLabelPosition())
     }
     
     private func sliceLabelPosition() -> CGSize {
         let angleInDegrees = (startAngle.degrees + endAngle.degrees) / 2.0
-        let angleInRadians = angleInDegrees * .pi / 180.0 // Conversion en radians
+        let angleInRadians = angleInDegrees * .pi / 180.0
         
-        let radius: CGFloat = 100 // Ajustez la distance du label par rapport au centre ici
+        let radius: CGFloat = 70 // Distance ajustée du label par rapport au centre
         
         let x = radius * cos(angleInRadians)
         let y = radius * sin(angleInRadians)
@@ -106,6 +120,3 @@ struct PieSliceLabel: View {
         return CGSize(width: x, height: y)
     }
 }
-
-
-

@@ -12,24 +12,50 @@ struct TransactionListView: View {
     @State var transactions: [Transaction] = []
     
     var body: some View {
-            List {
-                ForEach(transactionManager.transactions) { transaction in
-                    VStack(alignment: .leading) {
-                        Text(transaction.description)
-                        Text("€\(transaction.amount, specifier: "%.2f")")
-                            .foregroundColor(transaction.amount < 0 ? .red : .green)
-                    }
-                }
-                .onDelete { indexSet in
-                    // Supprimer les transactions sélectionnées
-                    for index in indexSet {
-                        let transactionToDelete = transactionManager.transactions[index]
-                        transactionManager.deleteTransaction(transaction: transactionToDelete)
-                    }
+        List {
+            ForEach(transactionManager.transactions) { transaction in
+                TransactionCardView(transaction: transaction)
+                    .padding(.vertical, 5)
+            }
+            .onDelete { indexSet in
+                for index in indexSet {
+                    let transactionToDelete = transactionManager.transactions[index]
+                    transactionManager.deleteTransaction(transaction: transactionToDelete)
                 }
             }
         }
+        .listStyle(PlainListStyle())
     }
+}
+
+struct TransactionCardView: View {
+    var transaction: Transaction
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(transaction.description)
+                .font(.headline)
+                .foregroundColor(.primary)
+            
+            Text("€\(transaction.amount, specifier: "%.2f")")
+                .font(.subheadline)
+                .foregroundColor(transaction.amount < 0 ? .red : .green)
+                .bold()
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+        )
+    }
+}
+
+struct TransactionListView_Previews: PreviewProvider {
+    static var previews: some View {
+        TransactionListView(transactionManager: TransactionManager())
+    }
+}
 
 // Modèle de données factices pour l'évolution de la valeur nette au fil du temps
 let netWorthDataPoints: [NetWorthDataPoint] = [
